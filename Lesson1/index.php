@@ -1,16 +1,3 @@
-<?php 
-if(is_array($_POST)){
-	if(file_put_contents("file_".time().".txt", $_POST["text1"])){
-		echo "done";
-		die;
-	}else{
-		echo "error" ;
-		die;
-	}
-	
-}
-?>
-
 <!DOCTYPE html>
 <html lang="vi">
 	<head>
@@ -79,10 +66,13 @@ if(is_array($_POST)){
 						
 							<div class="form-group">
 								<label for="">Text 1</label>
-								<input type="text" name="text1" class="form-control" id="" placeholder="Input field">
+								<input type="text" required name="text1" class="form-control" id="" placeholder="Input field">
 							</div>
 						
-							
+							<div class="form-group">
+								<label for="">Text 2</label>
+								<input type="text" required name="text2" class="form-control" id="" placeholder="Input field">
+							</div>							
 						
 							<button type="submit" class="btn btn-primary">Submit</button>
 						</form>
@@ -96,12 +86,11 @@ if(is_array($_POST)){
 		<script src="//code.jquery.com/jquery.js"></script>
 		<script>
 			$(".form_action").submit(function(){
-
 				$.ajax({
-					url: '/first_project',
+					url: '/first_project/Lesson1/do_ajax.php',
 					type: 'POST',
 					dataType: 'html',
-					data: $(".form_action").serialize(),
+					data: $(".form_action").serialize()
 				})
 				.done(function(data) {
 					if(data=="done"){
