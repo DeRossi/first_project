@@ -1,3 +1,16 @@
+<?php 
+if(is_array($_POST)){
+	if(file_put_contents("file_".time().".txt", $_POST["text1"])){
+		echo "done";
+		die;
+	}else{
+		echo "error" ;
+		die;
+	}
+	
+}
+?>
+
 <!DOCTYPE html>
 <html lang="vi">
 	<head>
@@ -59,15 +72,52 @@
 			<div class="panel panel-info">
 				  <div class="panel-heading">
 						<h3 class="panel-title">First Action</h3>
-				  </div>
-				  <div class="panel-body">
-						Action
+					</div>
+					<div class="panel-body">
+						<form action="/first_project" method="POST" role="form" class="form_action" >
+							<legend>Lesson 1</legend>
+						
+							<div class="form-group">
+								<label for="">Text 1</label>
+								<input type="text" name="text1" class="form-control" id="" placeholder="Input field">
+							</div>
+						
+							
+						
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</form>
 				  </div>
 			</div>
 		</div>
 
+
+
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>
+		<script>
+			$(".form_action").submit(function(){
+
+				$.ajax({
+					url: '/first_project',
+					type: 'POST',
+					dataType: 'html',
+					data: $(".form_action").serialize(),
+				})
+				.done(function(data) {
+					if(data=="done"){
+						alert("file saved");
+					}
+					console.log("success"+data);
+				})
+				.fail(function() {
+					console.log("error");
+				})
+				.always(function() {
+					console.log("complete");
+				});
+				return false;
+			})
+		</script>
 		<!-- Bootstrap JavaScript -->
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	</body>
