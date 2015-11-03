@@ -3,22 +3,25 @@
 <script src="//code.jquery.com/jquery.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-	$('.form-action').submit(function(event) {
-		$.ajax({
-			url: '/first_project/Lession1b/ajax.php',
-			type: 'POST',
-			dataType: 'html',
-			data: $('.form-action').serialize()
-		})
-		.done(function() {
-			console.log("success");
-		})
-		.fail(function() {
-			console.log("error");
-		})
-		.always(function() {
-			console.log("complete");
+	$(document).ready(function() {
+		$('.form-action').submit(function(event) {
+			$.ajax({
+				url: '/first_project/Lesson1b/ajax.php',
+				type: 'POST',
+				dataType: 'html',
+				data: $('.form-action').serialize()
+			})
+			.done(function() {
+				console.log("success");
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
 		});
+		return false;
 	});
 
 </script>
