@@ -14,15 +14,15 @@
 	}
 	$str = array();
 	$str = $_POST['txt'];
+	$arr_ = explode(",", $str);
 	echo("Array you typed : " .$str);
 	echo "<pre>";
-	print_r(explode(",", $str));
+	print_r($arr_));
 	echo "</pre>";
 
-	$arr_max = print_r(max(explode(",", $str)), true);
-	echo("Max element in array : " .$arr_max. '<br>');
+	$arr_max = print_r(max($arr_), true);
+	echo("Max element in array (use function max) : " .$arr_max. '<br>');
 
-	$arr_ = explode(",", $str);
 	$arr_length = count($arr_);
 	echo("Total elements of array : " .$arr_length. '<br>');
 
