@@ -21,7 +21,7 @@
 				console.log("complete");
 			});
 		});
-		return false;
+		event.preventDefault();
 	});
 
 </script>
@@ -29,8 +29,8 @@
 	<legend>Less 1B</legend>
 
 	<div class="form-group">
-		<label for="">label</label>
-		<input type="text" class="form-control" name="txt" id="" placeholder="Input field">
+		<label for="">Enter Content</label>
+		<input type="text" class="form-control" name="txt" id="" placeholder="Please enter content you want at here">
 	</div>
 
 

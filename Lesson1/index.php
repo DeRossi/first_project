@@ -32,8 +32,8 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Link</a></li>
-					<li><a href="#">Link</a></li>
+					<li class="active"><a href="http://localhost/first_project/Lesson1B">Lesson 1B</a></li>
+					<li><a href="http://localhost/first_project/Lesson2">Lesson 2</a></li>
 				</ul>
 				<form class="navbar-form navbar-left" role="search">
 					<div class="form-group">
@@ -79,7 +79,6 @@
 				  </div>
 			</div>
 		</div>
-
 
 
 		<!-- jQuery -->
