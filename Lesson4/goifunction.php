@@ -22,12 +22,16 @@
 
 	function so_chan_cuoi_cung(array $arr_1){
 		$count = count($arr_1);
-		for ($i=0; $i < $count; $i++) { 
-			if($arr_1[$i] % 2 == 0){
-				$arr_chan1[$i] = $arr_1[$i];
+		$cursor_max = 0;
+		foreach ($arr_1 as $key => $value) {
+			if($arr_1[$value] > $arr_1[$cursor_max]){
+				$cursor_max = $value;
+				if($arr_1[$cursor_max] % 2 == 0){
+					$max3 = $arr_1[$cursor_max];
+				}
 			}
 		}
-		return $arr_chan1;
+		return $max3;
 	}
 
 ?>

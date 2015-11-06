@@ -41,13 +41,10 @@
 </div>
 	<h1 style="text-align:center">Thao tác với Array</h1>
 	<?php
-	/*public function bt1(){
-		echo "bt1";
-	}*/
 
 		$cursor_max = 0; $cursor_min = 0;
 		
-		$arr_1 = array(1,2,3,4,5,6,7,8,9,10);
+		$arr_1 = array(1,2,3,4,5,6,7,8,9,15);
 		$arr_1_length = count($arr_1);
 		include("goifunction.php");
 
@@ -61,7 +58,7 @@
 		echo('<br>');
 		$bt_5 = so_chan_cuoi_cung($arr_1);
 		echo($bt_5);
-
+		echo('<br>');
 
 		if($_POST){
 			$str1  = $_POST['name_bt1'];
@@ -96,18 +93,7 @@
 				
 			}
 			if($str6){
-				$arr_6 = array(1,2,3,4,5,6,7,8,9,10);
-				foreach ($arr_3 as $key => $value) {
-					if($arr_6[$value] < $arr_6[$cursor_min]){
-						$cursor_max = $value;
-						$max3 = $arr_3[$cursor_max];
-					}else{
-						echo "";
-					}
-				}
-				echo "<pre>";
-				print_r($max3);
-				echo "</pre>";
+
 			}
 			if($str7){
 				
