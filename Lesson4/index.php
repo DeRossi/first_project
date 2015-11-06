@@ -60,9 +60,7 @@
 		echo($bt_3);
 		echo('<br>');
 		$bt_5 = so_chan_cuoi_cung($arr_1);
-		foreach ($bt_5 as $value) {
-			echo $value.'<br>';
-		}
+		echo($bt_5);
 
 
 		if($_POST){
