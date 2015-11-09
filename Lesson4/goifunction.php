@@ -134,7 +134,7 @@
 		$songuyento = false;
 		$count = count($arr_1);
 		for ($i=0; $i < $count; $i++) {
-			if(testsonguyento($arr_1[$i])){
+			if(testsonguyento($arr_1[$i])&&($arr_1[$i]>=0)){
 				$songuyento = true;
 				$arr_songuyento[0] = $arr_1[$i];
 				break;
@@ -152,7 +152,7 @@
 		$songuyento = false;
 		$count = count($arr_1);
 		for ($i=0; $i < $count; $i++) {
-			if(testsonguyento($arr_1[$i])){
+			if(testsonguyento($arr_1[$i])&&($arr_1[$i]>=0)){
 				$songuyento = true;
 				$arr_songuyento[$i] = $arr_1[$i];
 				$count_arr_songuyento = count($arr_songuyento);
@@ -174,7 +174,7 @@
 		$songuyento = false;
 		$count = count($arr_1);
 		for ($i=0; $i < $count; $i++) {
-			if(testsonguyento($arr_1[$i])){
+			if(testsonguyento($arr_1[$i])&&($arr_1[$i]>=0)){
 				$songuyento = true;
 				$arr_songuyento[$i] = $arr_1[$i];
 				$count_arr_songuyento = count($arr_songuyento);
