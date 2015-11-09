@@ -44,21 +44,37 @@
 
 		$cursor_max = 0; $cursor_min = 0;
 		
-		$arr_1 = array(1,2,3,4,5,6,7,8,9,15);
+		$arr_1 = array(1,2,3,4,5,6,7,8,9,10);
 		$arr_1_length = count($arr_1);
 		include("goifunction.php");
 
 		$bt_1 = giatri_chan_trong_mang($arr_1);
+		echo "Giá trị chẵn trong mảng : <br>";
 		foreach ($bt_1 as $value) {
 			echo $value.'<br>';
 		}
 		echo('<br>');
+		$bt_2 = cacvitri_co_GT_am_trong_mang($arr_1);
+		echo "Các vị trí có giá trị âm trong mảng : <br>";
+		echo($bt_2. '<br>');
+		foreach ($bt_2 as $value) {
+			echo $value.'<br>';
+		}
+		echo('<br>');
 		$bt_3 = giatri_max_trong_mang($arr_1);
-		echo($bt_3);
+		echo('Giá trị max trong mảng : ' .$bt_3);
+		echo('<br>');
+		$bt4 = giatri_duong_dautien_trong_mang($arr_1);
+		echo('Giá trị dương đầu tiên trong mảng (Nếu mảng ko có giá trị dương thì trả về -1): ' .$bt4);
 		echo('<br>');
 		$bt_5 = so_chan_cuoi_cung($arr_1);
-		echo($bt_5);
+		echo('Số chẵn cuối cùng : ' .$bt_5);
 		echo('<br>');
+		$bt6 = vitri_co_giatri_nhonhat($arr_1);
+		echo('Vị trí có giá trị nhỏ nhất : ' .$bt6);
+		echo('<br>');
+		$bt7 = vitri_co_giatri_chan_dautien($arr_1);
+		echo('Vị trí có giá trị chẵn đầu tiên (Nếu không có giá trị chẵn thì trả về -1) : ' .$bt7);
 
 		if($_POST){
 			$str1  = $_POST['name_bt1'];
@@ -83,20 +99,6 @@
 						print_r($arr_2[$value2]);
 						echo "</pre>";
 				}
-			}
-			if($str3){
-			}
-			if($str4){
-				
-			}
-			if($str5){
-				
-			}
-			if($str6){
-
-			}
-			if($str7){
-				
 			}
 		}
 	?>

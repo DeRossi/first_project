@@ -9,7 +9,23 @@
 		return $arr_chan1;
 	}
 
-	function giatri_max_trong_mang($arr_1){
+	function cacvitri_co_GT_am_trong_mang(array $arr_1){
+		$flag_GT_am = false;
+		$count = count($arr_1);
+		for ($i=0; $i < $count ; $i++) {
+			if($arr_1[$i] < 0){
+				$flag_GT_am = true;
+				$arr_am[$i] = $i;
+			}
+		}
+		if($flag_GT_am){
+			return $arr_am;
+		}else{
+			return -1;
+		}
+	}
+
+	function giatri_max_trong_mang(array $arr_1){
 		$max_element = 0;
 		$count = count($arr_1);
 		for ($i=0; $i < $count ; $i++) {
@@ -20,7 +36,24 @@
 		return $arr_1[$max_element];
 	}
 
-	function so_chan_cuoi_cung(array $arr_1){
+	function giatri_duong_dautien_trong_mang(array $arr_1){
+		$flag_GTDuong_off = true;
+		$count = count($arr_1);
+		for ($i=0; $i < $count; $i++) {
+			if($arr_1[$i] > 0){
+				$flag_GTDuong_off = false;
+				$first_plus = $arr_1[$i];
+				break;
+			}
+		}
+		if($flag_GTDuong_off){
+			return -1;
+		}else{
+			return $first_plus;
+		}
+	}
+
+	function so_chan_cuoi_cung(array $arr_1){ //
 		$count = count($arr_1);
 		$cursor_max = 0;
 		foreach ($arr_1 as $key => $value) {
@@ -34,20 +67,37 @@
 		return $max3;
 	}
 
+	function vitri_co_giatri_nhonhat(array $arr_1){
+		$min = 0;
+		$count = count($arr_1);
+		for ($i=0; $i < $count; $i++) {
+			if($arr_1[$min] > $arr_1[$i]){
+				$min = $i;
+			}
+		}
+		return $min;
+	}
+
+	function vitri_co_giatri_chan_dautien(array $arr_1){
+		$test_chan = 0;
+		$flag_chan_off = true;
+		$count = count($arr_1);
+		for ($i=0; $i < $count ; $i++) {
+			if($arr_1[$i] % 2 == 0){
+				$flag_chan_off = false;
+				$test_chan = $i;
+				break;
+			}
+		}
+		if($flag_chan_off){
+			return -1;
+		}else{
+			return $test_chan;
+		}
+	}
 ?>
 
 
 <?php
-	$arr_6 = array(1,2,3,4,5,6,7,8,9,10);
-	foreach ($arr_3 as $key => $value) {
-		if($arr_6[$value] < $arr_6[$cursor_min]){
-			$cursor_max = $value;
-			$max3 = $arr_3[$cursor_max];
-		}else{
-			echo "";
-		}
-	}
-	echo "<pre>";
-	print_r($max3);
-	echo "</pre>";
+	echo('Phúc đẹp trai<br>');
 ?>
