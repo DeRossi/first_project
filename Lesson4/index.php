@@ -45,6 +45,9 @@
 		$cursor_max = 0; $cursor_min = 0;
 		
 		$arr_1 = array(1,2,3,4,5,6,7,8,9,10);
+		//$arr_ = array();
+		//$arr_1 = create_rand_array_sothuc($arr_);
+
 		$arr_1_length = count($arr_1);
 		include("goifunction.php");
 
@@ -75,6 +78,23 @@
 		echo('<br>');
 		$bt7 = vitri_co_giatri_chan_dautien($arr_1);
 		echo('Vị trí có giá trị chẵn đầu tiên (Nếu không có giá trị chẵn thì trả về -1) : ' .$bt7);
+		echo('<br>');
+
+		$bt_9 = so_nguyento_cuoicung($arr_1);
+		echo('Số nguyên tố cuối cùng trong mảng (Nếu không có thì trả về -1) : ' .$bt_9);
+		echo('<br>');
+		foreach ($bt_9 as $value) {
+			echo $value.'<br>';
+		}
+		$bt_10 = so_nguyento_max($arr_1);
+		echo('Số nguyên tố lớn nhất trong mảng (Nếu mảng ko có số nguyên tố thì trả về 0) :' .$bt_10);
+		echo('<br>');
+		$bt_11 = GT_Chan_min($arr_1);
+		echo('Giá trị chẵn nhỏ nhất trong mảng (Nếu không có GT chẵn thì trả về -1) :' .$bt_11);
+		echo('<br>');
+		$bt_12 = vitri_GT_am_max($arr_1);
+		echo('Vị trí có giá trị âm lớn nhất (Nếu không có GT thì trả về -1) :' .$bt_12);
+		echo('<br>');
 
 		if($_POST){
 			$str1  = $_POST['name_bt1'];
