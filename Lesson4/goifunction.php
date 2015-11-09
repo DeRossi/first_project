@@ -130,6 +130,22 @@
 	}
 
 	// Bai 144
+	function so_nguyento_dautien(array $arr_1){
+		$songuyento = false;
+		$count = count($arr_1);
+		for ($i=0; $i < $count; $i++) {
+			if(testsonguyento($arr_1[$i])){
+				$songuyento = true;
+				$arr_songuyento[0] = $arr_1[$i];
+				break;
+			}
+		}
+		if($songuyento){
+			return $arr_songuyento[0];
+		}else{
+			return -1;
+		}
+	}
 
 	// Bai 148
 	function so_nguyento_cuoicung(array $arr_1){
@@ -179,30 +195,45 @@
 	// Bai 153
 	function GT_Chan_min(array $arr_1){
 		$chan = false;
-		$min = 0;
+		$cursor = 0;
 		$count = count($arr_1);
 		for ($i=0; $i < $count ; $i++) {
 			if($arr_1[$i] % 2 == 0){
 				$chan = true;
-				$min_val = $arr_1[$i];
-				$count_arr_chan = count($arr_chan);
-				//for ($j=0; $j < $count_arr_chan; $j++) {
-				//}
+				$min = $arr_1[$i];
+				$cursor++;
+				break;
+			}
+		}
+		for ($i+=1; $i < $count ; $i++) {
+			if(($arr_1[$i] % 2 == 0)&&($min > $arr_1[$i])){
+				$min = $arr_1[$i];
 			}
 		}
 		if($chan){
-			return $min_val;
+			return $min;
 		}else{
 			return -1;
 		}
 	}
 
 
-
 	// Bai 154
 	function vitri_GT_am_max(array $arr_1){
-
-		return test;
+		$min = 0;
+		$soam = false;
+		$count = count($arr_1);
+		for ($i=0; $i < $count; $i++) {
+			if(($arr_1[$min] > $arr_1[$i])&&($arr_1[$i] < 0)){
+				$soam = true;
+				$min = $i;
+			}
+		}
+		if($soam){
+			return $min;
+		}else{
+			return -1;
+		}
 	}
 
 ?>

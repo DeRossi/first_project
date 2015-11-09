@@ -1,0 +1,53 @@
+/*
+For more tutorials visit www.Codelator.com
+Author: Amrit S. Lotay
+*/
+.wrapper{
+	background-color:#22313F;
+	font-family: 'Raleway', sans-serif;
+	margin: 20px auto;
+	padding: 40px 40px;
+	position: relative;
+	width: 70%;
+}
+p{
+	color: #fff;
+	font-size: 16px;
+	font-family: 'Lato', sans-serif;
+	line-height:20px;
+}
+.top{
+	background-color: #F5AB35;
+	bottom: 2em;
+	color: #fff;
+	display: none;
+	opacity:0.6;
+	padding: 1.5em;
+	position: fixed;
+	right: 1.5em;
+	text-decoration: none;
+}
+.top:hover{
+	opacity:1;
+	transition:1s;
+}
+
+body{
+	background-color: #22313F;
+	font-family: 'Raleway', sans-serif;
+}
+h1{
+	color: #fff;
+	font-size: 46px;
+	margin-top: 50px;
+	text-align: center;
+}
+a{
+	color:#fff;
+	text-decoration:none;
+}
+footer{
+	color:#FC6;
+	text-align:center;
+	padding-bottom:15px;
+}
