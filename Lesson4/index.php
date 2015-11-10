@@ -1,8 +1,3 @@
-<!-- Latest compiled and minified CSS & JS -->
-<link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-<script src="//code.jquery.com/jquery.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
 <!DOCTYPE html>
 <html lang="">
 	<head>
@@ -20,22 +15,22 @@
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
-	</head>
-	<body>
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-<link href='http://fonts.googleapis.com/css?family=Raleway:600' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="backtotop.css">
-<script type="text/javascript" src="backtotop.js"></script>
-<script type="text/javascript">
-	function refreshPage(){
-		location.reload(true);
-	}
-</script>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:600' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="backtotop.css">
+		<script type="text/javascript" src="backtotop.js"></script>
+		<script type="text/javascript">
+			function refreshPage(){
+				location.reload(true);
+			}
+		</script>
+	</head>
+	<body>
 
 <div class="container">
 <div class="navbar">
