@@ -82,7 +82,6 @@
 			<h3 class="panel-title">Các vị trí có giá trị âm trong mảng //133</h3>
 			<?php
 			$bt_2 = cacvitri_co_GT_am_trong_mang($arr_1);
-			echo($bt_2. '<br>');
 			foreach ((array)$bt_2 as $value) {
 				echo $value.'<br>';
 			}
@@ -127,9 +126,6 @@
 			<h3 class="panel-title">Số nguyên tố đầu tiên trong mảng (Nếu không có thì trả về -1) //144</h3>
 		<?
 		$bt_8 = so_nguyento_dautien($arr_1); echo($bt_8);
-		foreach ((array)$bt_8 as $value) {
-			echo $value.'<br>';
-		}
 		?>
 		</div>
 	</div>
@@ -154,7 +150,7 @@
 		<div class="panel-heading">
 			<h3 class="panel-title">Giá trị chẵn nhỏ nhất trong mảng (Nếu không có GT chẵn thì trả về -1) //153</h3>
 			<?
-			$bt_11 = GT_Chan_min($arr_1); echo($bt_11);
+			$bt_11 = GT_Chan_min($arr_1);
 			foreach ((array)$bt_11 as $value) {
 				echo $value.'<br>';
 			}
@@ -165,6 +161,28 @@
 		<div class="panel-heading">
 			<h3 class="panel-title">Vị trí có giá trị âm lớn nhất (Nếu không có GT thì trả về -1) //154</h3>
 			<? $bt_12 = vitri_GT_am_max($arr_1); echo($bt_12); ?>
+		</div>
+	</div>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">Liệt kê các GT chẵn có ít nhất 1 lân cận cũng là GT chẵn //181</h3>
+			<? $bt_13 = gt_chan_lancan_chan($arr_1);
+			foreach ((array)$bt_13 as $value) {
+				echo $value.'<br>';
+			}
+			?>
+		</div>
+	</div>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">Tính tổng các phần tử trong mảng //200</h3>
+			<? $bt_14 = total_of_elements($arr_1); echo($bt_14); ?>
+		</div>
+	</div>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">Tính tổng các GT dương trong mảng //201</h3>
+			<? $bt_15 = total_gt_duong($arr_1); echo($bt_15); ?>
 		</div>
 	</div>
 
@@ -180,7 +198,7 @@
 
 			if($str2){
 				$arr_2 = array(1,2,3,4,5,6,7,8,9,10);
-				foreach ((array)$arr_2 as $key2 => $value2) {
+				foreach ($arr_2 as $key2 => $value2) {
 					/*if($arr_2[$value2] < 0){
 						echo "<pre>";
 						print_r($arr_2[$key2]);
