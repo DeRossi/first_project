@@ -253,7 +253,7 @@
 	}
 
 	// Bai 181 : Viết hàm liệt kê các GT chẵn có ít nhất một lân cận cũng là GT chẵn
-	 function gt_chan_lancan_chan(array $arr_1){
+	function gt_chan_lancan_chan(array $arr_1){
 		$count = count($arr_1);
 		for ($i=0; $i < $count; $i++) {
 			if($arr_1[$i] % 2 == 0){
@@ -287,6 +287,19 @@
 		return $arr_total[0];
 	}
 
+
+	// Bai 263 : Sắp xếp các số dương trong mảng tăng dần, số âm giảm dần, vị trí tương đối âm dương ko đổi
+	function duongtang_amgiam(array $arr_1){
+		$count = count($arr_1);
+		for ($i=0; $i < $count; $i++) {
+			if($arr_1[$i] % 2 == 0){
+				$arr_chan[$i] = $arr_1[$i];
+			}else{
+				$arr_le[$i] = $arr_1[$i];
+			}
+		}
+		return $arr_chan;// chua xong
+	}
 ?>
 
 

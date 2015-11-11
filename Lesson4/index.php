@@ -186,6 +186,17 @@
 		</div>
 	</div>
 
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">Sắp xếp các số dương tăng dần, số âm giảm dần//263</h3>
+			<? $bt_18 = duongtang_amgiam($arr_1);
+			foreach ((array)$bt_18 as $value) {
+				echo $value.'<br>';
+			}
+			?>
+		</div>
+	</div>
+
 	<?php
 		if($_POST){
 			$str1  = $_POST['name_bt1'];
