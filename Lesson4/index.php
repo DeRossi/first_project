@@ -66,7 +66,7 @@
 			<h3 class="panel-title">Giá trị chẵn trong mảng //132</h3>
 			<?php
 			$bt_1 = giatri_chan_trong_mang($arr_1);
-			foreach ($bt_1 as $value) {
+			foreach ((array)$bt_1 as $value) {
 				echo $value.'<br>';
 			}
 			?>
@@ -78,7 +78,7 @@
 			<?php
 			$bt_2 = cacvitri_co_GT_am_trong_mang($arr_1);
 			echo($bt_2. '<br>');
-			foreach ($bt_2 as $value) {
+			foreach ((array)$bt_2 as $value) {
 				echo $value.'<br>';
 			}
 			?>
@@ -122,7 +122,7 @@
 			<h3 class="panel-title">Số nguyên tố đầu tiên trong mảng (Nếu không có thì trả về -1) //144</h3>
 		<?
 		$bt_8 = so_nguyento_dautien($arr_1); echo($bt_8);
-		foreach ($bt_8 as $value) {
+		foreach ((array)$bt_8 as $value) {
 			echo $value.'<br>';
 		}
 		?>
@@ -133,7 +133,7 @@
 			<h3 class="panel-title">Số nguyên tố cuối cùng trong mảng (Nếu không có thì trả về -1) //148</h3>
 		<?
 		$bt_9 = so_nguyento_cuoicung($arr_1); echo($bt_9);
-		foreach ($bt_9 as $value) {
+		foreach ((array)$bt_9 as $value) {
 			echo $value.'<br>';
 		}
 		?>
@@ -150,7 +150,7 @@
 			<h3 class="panel-title">Giá trị chẵn nhỏ nhất trong mảng (Nếu không có GT chẵn thì trả về -1) //153</h3>
 			<?
 			$bt_11 = GT_Chan_min($arr_1); echo($bt_11);
-			foreach ($bt_11 as $value) {
+			foreach ((array)$bt_11 as $value) {
 				echo $value.'<br>';
 			}
 			?>
@@ -175,7 +175,7 @@
 
 			if($str2){
 				$arr_2 = array(1,2,3,4,5,6,7,8,9,10);
-				foreach ($arr_2 as $key2 => $value2) {
+				foreach ((array)$arr_2 as $key2 => $value2) {
 					/*if($arr_2[$value2] < 0){
 						echo "<pre>";
 						print_r($arr_2[$key2]);
