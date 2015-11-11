@@ -47,7 +47,7 @@
 		return true;
 	}
 
-	// Bai 132
+	// Bai 132 : Tìm các Giá trị chẵn trong mảng
 	function giatri_chan_trong_mang(array $arr_1){
 		$count = count($arr_1);
 		for ($i=0; $i < $count ; $i++) {
@@ -57,7 +57,7 @@
 		}
 		return $arr_chan1;
 	}
-	// Bai 133
+	// Bai 133 : Tìm Các vị trí có giá trị âm trong mảng
 	function cacvitri_co_GT_am_trong_mang(array $arr_1){
 		$flag_GT_am = false;
 		$count = count($arr_1);
@@ -73,7 +73,7 @@
 			return -1;
 		}
 	}
-	// Bai 134
+	// Bai 134 : Tìm Giá trị max trong mảng
 	function giatri_max_trong_mang(array $arr_1){
 		$max_element = 0;
 		$count = count($arr_1);
@@ -84,7 +84,7 @@
 		}
 		return $arr_1[$max_element];
 	}
-	// Bai 135
+	// Bai 135 : Giá trị dương đầu tiên trong mảng (Nếu mảng ko có giá trị dương thì trả về -1)
 	function giatri_duong_dautien_trong_mang(array $arr_1){
 		$flag_GTDuong_off = true;
 		$count = count($arr_1);
@@ -101,7 +101,7 @@
 			return $first_plus;
 		}
 	}
-	// Bai 136
+	// Bai 136 : Tìm Số chẵn cuối cùng
 	function so_chan_cuoi_cung(array $arr_1){ //
 		$count = count($arr_1);
 		$cursor_max = 0;
@@ -115,7 +115,7 @@
 		}
 		return $max3;
 	}
-	// Bai 137
+	// Bai 137 : Vị trí có giá trị nhỏ nhất
 	function vitri_co_giatri_nhonhat(array $arr_1){
 		$min = 0;
 		$count = count($arr_1);
@@ -126,7 +126,7 @@
 		}
 		return $min;
 	}
-	// Bai 138
+	// Bai 138 : Vị trí có giá trị chẵn đầu tiên (Nếu không có giá trị chẵn thì trả về -1)
 	function vitri_co_giatri_chan_dautien(array $arr_1){
 		$test_chan = 0;
 		$flag_chan_off = true;
@@ -145,7 +145,7 @@
 		}
 	}
 
-	// Bai 144
+	// Bai 144 : Số nguyên tố đầu tiên trong mảng (Nếu không có thì trả về -1)
 	function so_nguyento_dautien(array $arr_1){
 		$songuyento = false;
 		$count = count($arr_1);
@@ -163,7 +163,7 @@
 		}
 	}
 
-	// Bai 148
+	// Bai 148 : Số nguyên tố cuối cùng trong mảng (Nếu không có thì trả về -1)
 	function so_nguyento_cuoicung(array $arr_1){
 		$songuyento = false;
 		$count = count($arr_1);
@@ -184,7 +184,7 @@
 		}
 	}
 
-	// Bai 151
+	// Bai 151 : Số nguyên tố lớn nhất trong mảng (Nếu mảng ko có số nguyên tố thì trả về 0)
 	function so_nguyento_max(array $arr_1){
 		$up_arr_songuyento = 0;
 		$songuyento = false;
@@ -208,7 +208,7 @@
 		}
 	}
 
-	// Bai 153
+	// Bai 153 : Giá trị chẵn nhỏ nhất trong mảng (Nếu không có GT chẵn thì trả về -1)
 	function GT_Chan_min(array $arr_1){
 		$chan = false;
 		$cursor = 0;
@@ -234,7 +234,7 @@
 	}
 
 
-	// Bai 154
+	// Bai 154 : Vị trí có giá trị âm lớn nhất (Nếu không có GT thì trả về -1)
 	function vitri_GT_am_max(array $arr_1){
 		$min = 0;
 		$soam = false;
