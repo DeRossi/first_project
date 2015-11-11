@@ -1,4 +1,20 @@
 <?php
+	//function create_rand_array_sothuc(array $arr)
+	//function create_rand_array_songuyen(array $arr)
+	//function testsonguyento($no)
+	//function giatri_chan_trong_mang(array $arr_1)
+	//function cacvitri_co_GT_am_trong_mang(array $arr_1)
+	//function giatri_max_trong_mang(array $arr_1)
+	//function giatri_duong_dautien_trong_mang(array $arr_1)
+	//function so_chan_cuoi_cung(array $arr_1){ /
+	//function vitri_co_giatri_nhonhat(array $arr_1)
+	//function vitri_co_giatri_chan_dautien(array $arr_1)
+	//function so_nguyento_dautien(array $arr_1)
+	//function so_nguyento_cuoicung(array $arr_1)
+	//function so_nguyento_max(array $arr_1)
+	//function GT_Chan_min(array $arr_1)
+	//function vitri_GT_am_max(array $arr_1)
+	
 	// Goi random array
 	function create_rand_array_sothuc(array $arr){
 		for($i=0;$i<100;$i++){
