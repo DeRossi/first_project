@@ -90,23 +90,36 @@
 		<!-- Nav tabs -->
 		<ul class="nav nav-tabs" role="tablist">
 			<li role="presentation" class="active">
-				<a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">GT chẵn trong Array, Số chẵn cuối cùng</a>
+				<a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Tính chẵn, lẻ</a>
 			</li>
 			<li role="presentation">
 				<a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Số nguyên tố</a>
 			</li>
+			<li role="presentation">
+				<a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Max, Min</a>
+			</li>
+			<li role="presentation">
+				<a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab">Sắp xếp Array</a>
+			</li>
+			<li role="presentation">
+				<a href="#tab5" aria-controls="tab5" role="tab" data-toggle="tab">Âm, dương</a>
+			</li>
 		</ul>
 		<!-- Tab panes -->
 		<div class="tab-content">
+			<!-- Tab 1 : Tinh chan, le -->
 			<div role="tabpanel" class="tab-pane active" id="tab1"><br>
 				<div class="panel panel-primary">
 					<div class="panel-heading">
 						<h3 class="panel-title">Giá trị chẵn trong mảng //132</h3>
 						<?php
 						$bt_1 = giatri_chan_trong_mang($arr_1);
-						foreach ((array)$bt_1 as $value) {
+						/*foreach ((array)$bt_1 as $value) {
 							echo $value.'<br>';
-						}
+						}*/
+						echo('<pre>');
+						print_r((array)$bt_1);
+						echo('</pre>');
 						?>
 					</div>
 				</div>
@@ -116,7 +129,14 @@
 						<? $bt_5 = so_chan_cuoi_cung($arr_1); echo($bt_5);?>
 					</div>
 				</div>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Vị trí có giá trị chẵn đầu tiên (Nếu không có giá trị chẵn thì trả về -1) //138</h3>
+						<? $bt7 = vitri_co_giatri_chan_dautien($arr_1); echo($bt7); ?>
+					</div>
+				</div>
 			</div>
+			<!-- Tab 2 : So nguyen to -->
 			<div role="tabpanel" class="tab-pane" id="tab2"><br>
 				<div class="panel panel-primary">
 					<div class="panel-heading">
@@ -141,98 +161,115 @@
 					</div>
 				</div>
 			</div>
+			<!-- Tab 3 : Max, Min -->
+			<div role="tabpanel" class="tab-pane" id="tab3"><br>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Giá trị max trong mảng //134</h3>
+						<?
+						$bt_3 = giatri_max_trong_mang($arr_1);
+						echo($bt_3);
+						?>
+					</div>
+				</div>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Giá trị chẵn nhỏ nhất trong mảng (Nếu không có GT chẵn thì trả về -1) //153</h3>
+						<?
+						$bt_11 = GT_Chan_min($arr_1);
+						foreach ((array)$bt_11 as $value) {
+							echo $value.'<br>';
+						}
+						?>
+					</div>
+				</div>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Vị trí có giá trị âm lớn nhất (Nếu không có GT thì trả về -1) //154</h3>
+						<? $bt_12 = vitri_GT_am_max($arr_1); echo($bt_12); ?>
+					</div>
+				</div>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Vị trí có giá trị nhỏ nhất //137</h3>
+						<? $bt6 = vitri_co_giatri_nhonhat($arr_1); echo($bt6); ?>
+					</div>
+				</div>
+			</div>
+			<!-- Tab 4 : Sap xep Array -->
+			<div role="tabpanel" class="tab-pane" id="tab4"><br>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Sắp xếp các GT tại các vị trí lẻ trong mảng tăng dần, các vị trí khác giữ nguyên GT và vị trí //257</h3>
+						<? $bt_13 = sort_VT_le_tangdan($arr_1);
+						/*foreach ((array)$bt_13 as $value) {
+							echo $value.'<br>';
+						}*/
+						echo('<pre>');
+						print_r((array)$bt_13);
+						echo('</pre>');
+						?>
+					</div>
+				</div>
+
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Sắp xếp các số dương trong mảng tăng dần các số âm giữ VT //261</h3>
+						<? $bt_14 = sort_GT_duong_tangdan($arr_1);
+						/*foreach ((array)$bt_14 as $value) {
+							echo $value.'<br>';
+						}*/
+						echo('<pre>');
+						print_r((array)$bt_14);
+						echo('</pre>');
+						?>
+					</div>
+				</div>
+
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Sắp xếp các số dương tăng dần, số âm giảm dần //263</h3>
+						<? $bt_18 = duongtang_amgiam($arr_1);
+						/*foreach ((array)$bt_18 as $value) {
+							echo $value.'<br>';
+						}*/
+						echo('<pre>');
+						print_r((array)$bt_18);
+						echo('</pre>');
+						?>
+					</div>
+				</div>
+			</div>
+			<!-- Tab 5 : Tinh am, duong -->
+			<div role="tabpanel" class="tab-pane" id="tab5"><br>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Các vị trí có giá trị âm trong mảng //133</h3>
+						<?php
+						$bt_2 = cacvitri_co_GT_am_trong_mang($arr_1);
+						/*foreach ((array)$bt_2 as $value) {
+							echo $value.'<br>';
+						}*/
+						echo('<pre>');
+						print_r((array)$bt_2);
+						echo('</pre>');
+						?>
+					</div>
+				</div>
+
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Giá trị dương đầu tiên trong mảng (Nếu mảng ko có giá trị dương thì trả về -1) //135</h3>
+						<? $bt4 = giatri_duong_dautien_trong_mang($arr_1); echo($bt4); ?>
+					</div>
+				</div>
+			</div>
+
 		</div>
 	</div>
 
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Các vị trí có giá trị âm trong mảng //133</h3>
-			<?php
-			$bt_2 = cacvitri_co_GT_am_trong_mang($arr_1);
-			foreach ((array)$bt_2 as $value) {
-				echo $value.'<br>';
-			}
-			?>
-		</div>
-	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Giá trị max trong mảng //134</h3>
-			<?
-			$bt_3 = giatri_max_trong_mang($arr_1);
-			echo($bt_3);
-			?>
-		</div>
-	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Giá trị dương đầu tiên trong mảng (Nếu mảng ko có giá trị dương thì trả về -1) //135</h3>
-			<? $bt4 = giatri_duong_dautien_trong_mang($arr_1); echo($bt4); ?>
-		</div>
-	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Vị trí có giá trị nhỏ nhất //137</h3>
-			<? $bt6 = vitri_co_giatri_nhonhat($arr_1); echo($bt6); ?>
-		</div>
-	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Vị trí có giá trị chẵn đầu tiên (Nếu không có giá trị chẵn thì trả về -1) //138</h3>
-			<? $bt7 = vitri_co_giatri_chan_dautien($arr_1); echo($bt7); ?>
-		</div>
-	</div>
 	
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Giá trị chẵn nhỏ nhất trong mảng (Nếu không có GT chẵn thì trả về -1) //153</h3>
-			<?
-			$bt_11 = GT_Chan_min($arr_1);
-			foreach ((array)$bt_11 as $value) {
-				echo $value.'<br>';
-			}
-			?>
-		</div>
-	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Vị trí có giá trị âm lớn nhất (Nếu không có GT thì trả về -1) //154</h3>
-			<? $bt_12 = vitri_GT_am_max($arr_1); echo($bt_12); ?>
-		</div>
-	</div>
 
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Sắp xếp các GT tại các vị trí lẻ trong mảng tăng dần, các vị trí khác giữ nguyên GT và vị trí //257</h3>
-			<? $bt_13 = sort_VT_le_tangdan($arr_1);
-			foreach ((array)$bt_13 as $value) {
-				echo $value.'<br>';
-			}
-			?>
-		</div>
-	</div>
-
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Sắp xếp các số dương trong mảng tăng dần các số âm giữ VT //261</h3>
-			<? $bt_14 = sort_GT_duong_tangdan($arr_1);
-			foreach ((array)$bt_14 as $value) {
-				echo $value.'<br>';
-			}
-			?>
-		</div>
-	</div>
-
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Sắp xếp các số dương tăng dần, số âm giảm dần //263</h3>
-			<? $bt_18 = duongtang_amgiam($arr_1);
-			foreach ((array)$bt_18 as $value) {
-				echo $value.'<br>';
-			}
-			?>
-		</div>
-	</div>
 	<?php
 		if($_POST){
 			$str1  = $_POST['name_bt1'];
@@ -261,7 +298,7 @@
 		}
 	?>
 
-		
+
 <hr>
 </div>
 

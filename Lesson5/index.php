@@ -73,16 +73,16 @@
 	<?php
 		include("../library/goifunction.php");
 		//$arr_1 = array(1,2,3,4,5,6,7,8,9,10);
+
 		$arr_1 = create_rand_array_songuyen();
 
-		$arr_1_length = count($arr_1);
 	?>
 	<button type="button" class="btn btn-default" onclick='refreshPage();'>Reload Random Array</button>
 	<div class="well">
 		<?
-		//echo('<pre>');
+		echo('<pre>');
 		print_r($arr_1);
-		//echo('</pre>');
+		echo('</pre>');
 		?>
 	</div>
 
@@ -90,9 +90,12 @@
 		<div class="panel-heading">
 			<h3 class="panel-title">Liệt kê các GT chẵn có ít nhất 1 lân cận cũng là GT chẵn //181</h3>
 			<? $bt_13 = gt_chan_lancan_chan($arr_1);
-			foreach ((array)$bt_13 as $value) {
+			/*foreach ((array)$bt_13 as $value) {
 				echo $value.'<br>';
-			}
+			}*/
+			echo('<pre>');
+			print_r((array)$bt_13);
+			echo('</pre>');
 			?>
 		</div>
 	</div>

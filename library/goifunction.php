@@ -249,7 +249,7 @@
 		$count = count($arr_1);
 		for ($i=0; $i < $count; $i++) {
 			if($arr_1[$i] % 2 == 0){
-				if($i == 0){
+				if($i == 0 || $i == ($count - 1)){
 					continue;
 				}elseif (($arr_1[$i-1] % 2 == 0) || ($arr_1[$i + 1] % 2 == 0)) {
 					$arr_chan[] = $arr_1[$i];
