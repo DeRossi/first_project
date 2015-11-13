@@ -35,11 +35,11 @@
 		if($no == 2){
 			$no++;
 			return true;
-		}elseif($no == 1 || ($no % 2 == 0)){
+		}elseif($no == 1 || ($no % 2 == 0) || ($no < 0)){
 			return false;
 		}
 		for ($i=3; $i <= ceil(sqrt($no)) ; $i= $i+2) {
-			if($no % $i == 0){
+			if($no % $i == 0 || ($no < 0)){
 				return false;
 			}
 		}
@@ -150,14 +150,14 @@
 		$songuyento = false;
 		$count = count($arr_1);
 		for ($i=0; $i < $count; $i++) {
-			if(testsonguyento($arr_1[$i])&&($arr_1[$i]>=0)){
+			if(testsonguyento($arr_1[$i])){
 				$songuyento = true;
-				$arr_songuyento[0] = $arr_1[$i];
+				$arr_songuyento = $arr_1[$i];
 				break;
 			}
 		}
 		if($songuyento){
-			return $arr_songuyento[0];
+			return $arr_songuyento;
 		}else{
 			return -1;
 		}
@@ -168,17 +168,13 @@
 		$songuyento = false;
 		$count = count($arr_1);
 		for ($i=0; $i < $count; $i++) {
-			if(testsonguyento($arr_1[$i])&&($arr_1[$i]>=0)){
+			if(testsonguyento($arr_1[$i])){
 				$songuyento = true;
-				$arr_songuyento[$i] = $arr_1[$i];
-				$count_arr_songuyento = count($arr_songuyento);
-				for ($j=0; $j < $count_arr_songuyento; $j++) {
-					$last_primenumber = $arr_songuyento[$i];
-				}
+				$arr_songuyento = $arr_1[$i];
 			}
 		}
 		if($songuyento){
-			return $last_primenumber;
+			return $arr_songuyento;
 		}else{
 			return -1;
 		}
@@ -190,19 +186,15 @@
 		$songuyento = false;
 		$count = count($arr_1);
 		for ($i=0; $i < $count; $i++) {
-			if(testsonguyento($arr_1[$i])&&($arr_1[$i]>=0)){
+			if(testsonguyento($arr_1[$i])){
 				$songuyento = true;
-				$arr_songuyento[$i] = $arr_1[$i];
-				$count_arr_songuyento = count($arr_songuyento);
-				for ($j=0; $j < $count_arr_songuyento; $j++) {
-					if($arr_songuyento[$i] > $arr_songuyento[$up_arr_songuyento] ){
-						$up_arr_songuyento = $i;
-					}
+				if($arr_1[$i] > $arr_1[$up_arr_songuyento] ){
+					$up_arr_songuyento = $i;
 				}
 			}
 		}
 		if($songuyento){
-			return $arr_songuyento[$up_arr_songuyento];
+			return $arr_1[$up_arr_songuyento];
 		}else{
 			return 0;
 		}
@@ -211,23 +203,18 @@
 	// Bai 153 : Giá trị chẵn nhỏ nhất trong mảng (Nếu không có GT chẵn thì trả về -1)
 	function GT_Chan_min(array $arr_1){
 		$chan = false;
-		$cursor = 0;
 		$count = count($arr_1);
-		for ($i=0; $i < $count ; $i++) {
+		$max = ($count-1);
+		for ($i=($count-1); $i >= 0 ; $i--) {
 			if($arr_1[$i] % 2 == 0){
 				$chan = true;
-				$min = $arr_1[$i];
-				$cursor++;
-				break;
-			}
-		}
-		for ($i+=1; $i < $count ; $i++) {
-			if(($arr_1[$i] % 2 == 0)&&($min > $arr_1[$i])){
-				$min = $arr_1[$i];
+				if($arr_1[$max] > $arr_1[$i]){
+					$chan_min = $arr_1[$i];
+				}
 			}
 		}
 		if($chan){
-			return $min;
+			return $chan_min;
 		}else{
 			return -1;
 		}
