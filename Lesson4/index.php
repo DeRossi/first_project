@@ -69,12 +69,12 @@
 	</nav>
 
 <div class="container">
-	<h1 style="text-align:center">Thao tác với Array</h1>
+	<h1 style="text-align:center">Thao tác với Array - BT 4</h1>
 	<?php
-		include("goifunction.php");
+		include("../goifunction.php");
 		//$arr_1 = array(1,2,3,4,5,6,7,8,9,10);
-		$arr_ = array();
-		$arr_1 = create_rand_array_songuyen($arr_);
+
+		$arr_1 = create_rand_array_songuyen();
 
 		$arr_1_length = count($arr_1);
 	?>

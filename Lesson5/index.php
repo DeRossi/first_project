@@ -9,7 +9,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>LESSON 4 : Thao tác Với Array</title>
+		<title>LESSON 5 : Thao tác Với Array</title>
 
 		<!-- Bootstrap CSS -->
 		<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
@@ -29,8 +29,8 @@
 
 <link href='http://fonts.googleapis.com/css?family=Raleway:600' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="backtotop.css">
-<script type="text/javascript" src="backtotop.js"></script>
+<link rel="stylesheet" type="text/css" href="/Lesson4/backtotop.css">
+<script type="text/javascript" src="/Lesson4/backtotop.js"></script>
 <script type="text/javascript">
 	function refreshPage(){
 		location.reload(true);
@@ -69,12 +69,11 @@
 	</nav>
 
 <div class="container">
-	<h1 style="text-align:center">Thao tác với Array</h1>
+	<h1 style="text-align:center">Thao tác với Array - BT 5</h1>
 	<?php
-		include("goifunction.php");
+		include("../goifunction.php");
 		//$arr_1 = array(1,2,3,4,5,6,7,8,9,10);
-		$arr_ = array();
-		$arr_1 = create_rand_array_songuyen($arr_);
+		$arr_1 = create_rand_array_songuyen();
 
 		$arr_1_length = count($arr_1);
 	?>
@@ -109,35 +108,6 @@
 			<? $bt_15 = total_gt_duong($arr_1); echo($bt_15); ?>
 		</div>
 	</div>
-
-
-	<?php
-		if($_POST){
-			$str1  = $_POST['name_bt1'];
-			$str2  = $_POST['name_bt2'];
-			$str3  = $_POST['name_bt3'];
-			$str4  = $_POST['name_bt4'];
-			$str5  = $_POST['name_bt5'];
-			$str6  = $_POST['name_bt6'];
-			$str7  = $_POST['name_bt7'];
-
-			if($str2){
-				$arr_2 = array(1,2,3,4,5,6,7,8,9,10);
-				foreach ($arr_2 as $key2 => $value2) {
-					/*if($arr_2[$value2] < 0){
-						echo "<pre>";
-						print_r($arr_2[$key2]);
-						echo "</pre>";
-					}else{
-						echo "";
-					}*/
-					echo "<pre>";
-						print_r($arr_2[$value2]);
-						echo "</pre>";
-				}
-			}
-		}
-	?>
 
 		
 <hr>

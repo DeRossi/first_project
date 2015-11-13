@@ -23,7 +23,7 @@
 		return $array;
 	}
 
-	function create_rand_array_songuyen(array $arr){
+	function create_rand_array_songuyen(){
 		for($i=0;$i<100;$i++){
 			$array[$i] = 500-rand(0,1000);
 		}
@@ -260,7 +260,7 @@
 				if($i == 0){
 					continue;
 				}elseif (($arr_1[$i-1] % 2 == 0) || ($arr_1[$i + 1] % 2 == 0)) {
-					$arr_chan[$i] = $arr_1[$i];
+					$arr_chan[] = $arr_1[$i];
 				}
 			}
 		}
@@ -271,9 +271,9 @@
 	function total_of_elements(array $arr_1){
 		$count = count($arr_1);
 		for ($i=0; $i < $count; $i++) {
-			$arr_total[0] += $arr_1[$i];
+			$arr_total += $arr_1[$i];
 		}
-		return $arr_total[0];
+		return $arr_total;
 	}
 
 	// Bai 201 : Tính tổng các GT dương trong mảng 1 chiều các số thực
@@ -281,10 +281,10 @@
 		$count = count($arr_1);
 		for ($i=0; $i < $count; $i++) {
 			if($arr_1[$i] > 0){
-				$arr_total[0] += $arr_1[$i];
+				$arr_total += $arr_1[$i];
 			}
 		}
-		return $arr_total[0];
+		return $arr_total;
 	}
 
 
