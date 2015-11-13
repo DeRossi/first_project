@@ -71,7 +71,7 @@
 <div class="container">
 	<h1 style="text-align:center">Thao tác với Array - BT 5</h1>
 	<?php
-		include("../goifunction.php");
+		include("../library/goifunction.php");
 		//$arr_1 = array(1,2,3,4,5,6,7,8,9,10);
 		$arr_1 = create_rand_array_songuyen();
 

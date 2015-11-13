@@ -71,7 +71,7 @@
 <div class="container">
 	<h1 style="text-align:center">Thao tác với Array - BT 4</h1>
 	<?php
-		include("../goifunction.php");
+		include("../library/goifunction.php");
 		//$arr_1 = array(1,2,3,4,5,6,7,8,9,10);
 
 		$arr_1 = create_rand_array_songuyen();
@@ -85,17 +85,65 @@
 		echo('</pre>');
 		?>
 	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Giá trị chẵn trong mảng //132</h3>
-			<?php
-			$bt_1 = giatri_chan_trong_mang($arr_1);
-			foreach ((array)$bt_1 as $value) {
-				echo $value.'<br>';
-			}
-			?>
+
+	<div role="tabpanel">
+		<!-- Nav tabs -->
+		<ul class="nav nav-tabs" role="tablist">
+			<li role="presentation" class="active">
+				<a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">GT chẵn trong Array, Số chẵn cuối cùng</a>
+			</li>
+			<li role="presentation">
+				<a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Số nguyên tố</a>
+			</li>
+		</ul>
+		<!-- Tab panes -->
+		<div class="tab-content">
+			<div role="tabpanel" class="tab-pane active" id="tab1"><br>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Giá trị chẵn trong mảng //132</h3>
+						<?php
+						$bt_1 = giatri_chan_trong_mang($arr_1);
+						foreach ((array)$bt_1 as $value) {
+							echo $value.'<br>';
+						}
+						?>
+					</div>
+				</div>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Số chẵn cuối cùng //136</h3>
+						<? $bt_5 = so_chan_cuoi_cung($arr_1); echo($bt_5);?>
+					</div>
+				</div>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="tab2"><br>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Số nguyên tố đầu tiên trong mảng (Nếu không có thì trả về -1) //144</h3>
+						<?
+						$bt_8 = so_nguyento_dautien($arr_1); echo($bt_8);
+						?>
+					</div>
+				</div>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Số nguyên tố cuối cùng trong mảng (Nếu không có thì trả về -1) //148</h3>
+						<?
+						$bt_9 = so_nguyento_cuoicung($arr_1); echo($bt_9);
+						?>
+					</div>
+				</div>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Số nguyên tố lớn nhất trong mảng (Nếu mảng ko có số nguyên tố thì trả về 0) //151</h3>
+						<? $bt_10 = so_nguyento_max($arr_1); echo($bt_10);?>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
+
 	<div class="panel panel-primary">
 		<div class="panel-heading">
 			<h3 class="panel-title">Các vị trí có giá trị âm trong mảng //133</h3>
@@ -124,12 +172,6 @@
 	</div>
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			<h3 class="panel-title">Số chẵn cuối cùng //136</h3>
-			<? $bt_5 = so_chan_cuoi_cung($arr_1); echo($bt_5);?>
-		</div>
-	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
 			<h3 class="panel-title">Vị trí có giá trị nhỏ nhất //137</h3>
 			<? $bt6 = vitri_co_giatri_nhonhat($arr_1); echo($bt6); ?>
 		</div>
@@ -140,28 +182,7 @@
 			<? $bt7 = vitri_co_giatri_chan_dautien($arr_1); echo($bt7); ?>
 		</div>
 	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Số nguyên tố đầu tiên trong mảng (Nếu không có thì trả về -1) //144</h3>
-		<?
-		$bt_8 = so_nguyento_dautien($arr_1); echo($bt_8);
-		?>
-		</div>
-	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Số nguyên tố cuối cùng trong mảng (Nếu không có thì trả về -1) //148</h3>
-		<?
-		$bt_9 = so_nguyento_cuoicung($arr_1); echo($bt_9);
-		?>
-		</div>
-	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Số nguyên tố lớn nhất trong mảng (Nếu mảng ko có số nguyên tố thì trả về 0) //151</h3>
-			<? $bt_10 = so_nguyento_max($arr_1); echo($bt_10);?>
-		</div>
-	</div>
+	
 	<div class="panel panel-primary">
 		<div class="panel-heading">
 			<h3 class="panel-title">Giá trị chẵn nhỏ nhất trong mảng (Nếu không có GT chẵn thì trả về -1) //153</h3>
