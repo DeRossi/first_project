@@ -24,7 +24,7 @@
 	}
 
 	function create_rand_array_songuyen(){
-		for($i=0;$i<100;$i++){
+		for($i=0;$i<6;$i++){ //100
 			$array[$i] = 500-rand(0,1000);
 		}
 		return $array;
@@ -287,18 +287,63 @@
 		return $arr_total;
 	}
 
+	// Bai 257 : Sắp xếp các GT tại các vị trí lẻ trong mảng tăng dần, các vị trí khác giữ nguyên GT và vị trí
+	function sort_VT_le_tangdan(array $arr_1){
+		$count = count($arr_1);
+		for ($i=0; $i < $count ; $i++) {
+			if($i % 2 != 0){
+				for ($j=$i+2; $j <= $count ; $j+=2) {
+					if($arr_1[$i] > $arr_1[$j]){
+						$tmp = $arr_1[$j];
+						$arr_1[$j] = $arr_1[$i];
+						$arr_1[$i] = $tmp;
+					}
+				}
+			}
+		}
+		return $arr_1;
+	}
+
+	// Bai 261 : Săp xếp các số dương trong mảng tăng dần các số âm giữ VT
+	function sort_GT_duong_tangdan(array $arr_1){
+		$count = count($arr_1);
+		for ($i=0; $i < $count ; $i++) {
+			if($arr_1[$i] > 0){
+				for ($j=$i+1; $j <= $count ; $j++) {
+					if($arr_1[$j] > 0){
+						if($arr_1[$i] > $arr_1[$j]){
+							$tmp = $arr_1[$j];
+							$arr_1[$j] = $arr_1[$i];
+							$arr_1[$i] = $tmp;
+						}
+					}
+				}
+			}
+		}
+		return $arr_1;
+	}
 
 	// Bai 263 : Sắp xếp các số dương trong mảng tăng dần, số âm giảm dần, vị trí tương đối âm dương ko đổi
 	function duongtang_amgiam(array $arr_1){
 		$count = count($arr_1);
-		for ($i=0; $i < $count; $i++) {
-			if($arr_1[$i] % 2 == 0){
-				$arr_chan[$i] = $arr_1[$i];
-			}else{
-				$arr_le[$i] = $arr_1[$i];
+		for ($i=0; $i < $count ; $i++) {
+			for ($j=$i+1; $j <= $count ; $j++) {
+				if($arr_1[$j] > 0 && $arr_1[$i] > 0){
+					if($arr_1[$i] > $arr_1[$j]){
+						$tmp = $arr_1[$j];
+						$arr_1[$j] = $arr_1[$i];
+						$arr_1[$i] = $tmp;
+					}
+				}elseif ($arr_1[$j] < 0 && $arr_1[$i] < 0) {
+					if($arr_1[$i] < $arr_1[$j]){
+						$tmp = $arr_1[$j];
+						$arr_1[$j] = $arr_1[$i];
+						$arr_1[$i] = $tmp;
+					}
+				}
 			}
 		}
-		return $arr_chan;// chua xong
+		return $arr_1;
 	}
 ?>
 

@@ -81,12 +81,12 @@
 	<button type="button" class="btn btn-default" onclick='refreshPage();'>Reload Random Array</button>
 	<div class="well">
 		<?
-		//echo('<pre>');
+		echo('<pre>');
 		print_r($arr_1);
-		//echo('</pre>');
+		echo('</pre>');
 		?>
 	</div>
-	<div class="panel panel-primary">
+	<!-- <div class="panel panel-primary">
 		<div class="panel-heading">
 			<h3 class="panel-title">Giá trị chẵn trong mảng //132</h3>
 			<?php
@@ -182,33 +182,33 @@
 			<h3 class="panel-title">Vị trí có giá trị âm lớn nhất (Nếu không có GT thì trả về -1) //154</h3>
 			<? $bt_12 = vitri_GT_am_max($arr_1); echo($bt_12); ?>
 		</div>
-	</div>
+	</div> -->
+
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			<h3 class="panel-title">Liệt kê các GT chẵn có ít nhất 1 lân cận cũng là GT chẵn //181</h3>
-			<? $bt_13 = gt_chan_lancan_chan($arr_1);
+			<h3 class="panel-title">Sắp xếp các GT tại các vị trí lẻ trong mảng tăng dần, các vị trí khác giữ nguyên GT và vị trí //257</h3>
+			<? $bt_13 = sort_VT_le_tangdan($arr_1);
 			foreach ((array)$bt_13 as $value) {
 				echo $value.'<br>';
 			}
 			?>
 		</div>
 	</div>
+
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			<h3 class="panel-title">Tính tổng các phần tử trong mảng //200</h3>
-			<? $bt_14 = total_of_elements($arr_1); echo($bt_14); ?>
-		</div>
-	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Tính tổng các GT dương trong mảng //201</h3>
-			<? $bt_15 = total_gt_duong($arr_1); echo($bt_15); ?>
+			<h3 class="panel-title">Sắp xếp các số dương trong mảng tăng dần các số âm giữ VT //261</h3>
+			<? $bt_14 = sort_GT_duong_tangdan($arr_1);
+			foreach ((array)$bt_14 as $value) {
+				echo $value.'<br>';
+			}
+			?>
 		</div>
 	</div>
 
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			<h3 class="panel-title">Sắp xếp các số dương tăng dần, số âm giảm dần//263</h3>
+			<h3 class="panel-title">Sắp xếp các số dương tăng dần, số âm giảm dần //263</h3>
 			<? $bt_18 = duongtang_amgiam($arr_1);
 			foreach ((array)$bt_18 as $value) {
 				echo $value.'<br>';
@@ -216,7 +216,6 @@
 			?>
 		</div>
 	</div>
-
 	<?php
 		if($_POST){
 			$str1  = $_POST['name_bt1'];

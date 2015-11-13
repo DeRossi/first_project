@@ -50,9 +50,9 @@
 				<a href="/Lesson1" class="list-group-item">BAI TAP 1 - do Ajax</a>
 				<a href="/Lesson1b" class="list-group-item">BAI TAP 1b - do Ajax</a>
 				<a href="/Lesson2" class="list-group-item">BAI TAP 2</a>
-				<a href="/Lesson3" class="list-group-item">BAI TAP 3</a>
+				<a href="/Lesson3" class="list-group-item">BAI TAP 3 - Regular Expression Basic</a>
 				<a href="/Lesson4" class="list-group-item">BAI TAP 4 - Thao tác với Array</a>
-				<a href="/Lesson5" class="list-group-item">BAI TAP 5</a>
+				<a href="/Lesson5" class="list-group-item">BAI TAP 5 - Thao tác với Array [Kỹ thuật tìm kiếm & tính tổng]</a>
 			</div>
 		</div>
 
