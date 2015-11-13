@@ -24,7 +24,7 @@
 	}
 
 	function create_rand_array_songuyen(){
-		for($i=0;$i<6;$i++){ //100
+		for($i=0;$i<12;$i++){ //100
 			$array[$i] = 500-rand(0,1000);
 		}
 		return $array;

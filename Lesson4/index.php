@@ -72,11 +72,10 @@
 	<h1 style="text-align:center">Thao tác với Array - BT 4</h1>
 	<?php
 		include("../goifunction.php");
-		$arr_1 = array(1,2,3,4,5,6,7,8,9,10);
+		//$arr_1 = array(1,2,3,4,5,6,7,8,9,10);
 
-		//$arr_1 = create_rand_array_songuyen();
+		$arr_1 = create_rand_array_songuyen();
 
-		$arr_1_length = count($arr_1);
 	?>
 	<button type="button" class="btn btn-default" onclick='refreshPage();'>Reload Random Array</button>
 	<div class="well">
@@ -86,7 +85,7 @@
 		echo('</pre>');
 		?>
 	</div>
-	<!-- <div class="panel panel-primary">
+	<div class="panel panel-primary">
 		<div class="panel-heading">
 			<h3 class="panel-title">Giá trị chẵn trong mảng //132</h3>
 			<?php
@@ -148,7 +147,7 @@
 		$bt_8 = so_nguyento_dautien($arr_1); echo($bt_8);
 		?>
 		</div>
-	</div>-->
+	</div>
 	<div class="panel panel-primary">
 		<div class="panel-heading">
 			<h3 class="panel-title">Số nguyên tố cuối cùng trong mảng (Nếu không có thì trả về -1) //148</h3>
