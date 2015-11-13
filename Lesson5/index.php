@@ -56,8 +56,8 @@
 				<li><a href="/Lesson1b">Lesson 1B</a></li>
 				<li><a href="/Lesson2">Lesson 2</a></li>
 				<li><a href="/Lesson3">Lesson 3</a></li>
-				<li class="active"><a href="/Lesson4">Lesson 4</a></li>
-				<li><a href="/Lesson5">Lesson 5</a></li>
+				<li><a href="/Lesson4">Lesson 4</a></li>
+				<li class="active"><a href="/Lesson5">Lesson 5</a></li>
 			</ul>
 			<form class="navbar-form navbar-left" role="search">
 				<div class="form-group">
@@ -86,103 +86,7 @@
 		//echo('</pre>');
 		?>
 	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Giá trị chẵn trong mảng //132</h3>
-			<?php
-			$bt_1 = giatri_chan_trong_mang($arr_1);
-			foreach ((array)$bt_1 as $value) {
-				echo $value.'<br>';
-			}
-			?>
-		</div>
-	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Các vị trí có giá trị âm trong mảng //133</h3>
-			<?php
-			$bt_2 = cacvitri_co_GT_am_trong_mang($arr_1);
-			foreach ((array)$bt_2 as $value) {
-				echo $value.'<br>';
-			}
-			?>
-		</div>
-	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Giá trị max trong mảng //134</h3>
-			<?
-			$bt_3 = giatri_max_trong_mang($arr_1);
-			echo($bt_3);
-			?>
-		</div>
-	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Giá trị dương đầu tiên trong mảng (Nếu mảng ko có giá trị dương thì trả về -1) //135</h3>
-			<? $bt4 = giatri_duong_dautien_trong_mang($arr_1); echo($bt4); ?>
-		</div>
-	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Số chẵn cuối cùng //136</h3>
-			<? $bt_5 = so_chan_cuoi_cung($arr_1); echo($bt_5);?>
-		</div>
-	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Vị trí có giá trị nhỏ nhất //137</h3>
-			<? $bt6 = vitri_co_giatri_nhonhat($arr_1); echo($bt6); ?>
-		</div>
-	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Vị trí có giá trị chẵn đầu tiên (Nếu không có giá trị chẵn thì trả về -1) //138</h3>
-			<? $bt7 = vitri_co_giatri_chan_dautien($arr_1); echo($bt7); ?>
-		</div>
-	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Số nguyên tố đầu tiên trong mảng (Nếu không có thì trả về -1) //144</h3>
-		<?
-		$bt_8 = so_nguyento_dautien($arr_1); echo($bt_8);
-		?>
-		</div>
-	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Số nguyên tố cuối cùng trong mảng (Nếu không có thì trả về -1) //148</h3>
-		<?
-		$bt_9 = so_nguyento_cuoicung($arr_1); echo($bt_9);
-		foreach ((array)$bt_9 as $value) {
-			echo $value.'<br>';
-		}
-		?>
-		</div>
-	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Số nguyên tố lớn nhất trong mảng (Nếu mảng ko có số nguyên tố thì trả về 0) //151</h3>
-			<? $bt_10 = so_nguyento_max($arr_1); echo($bt_10);?>
-		</div>
-	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Giá trị chẵn nhỏ nhất trong mảng (Nếu không có GT chẵn thì trả về -1) //153</h3>
-			<?
-			$bt_11 = GT_Chan_min($arr_1);
-			foreach ((array)$bt_11 as $value) {
-				echo $value.'<br>';
-			}
-			?>
-		</div>
-	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Vị trí có giá trị âm lớn nhất (Nếu không có GT thì trả về -1) //154</h3>
-			<? $bt_12 = vitri_GT_am_max($arr_1); echo($bt_12); ?>
-		</div>
-	</div>
+
 	<div class="panel panel-primary">
 		<div class="panel-heading">
 			<h3 class="panel-title">Liệt kê các GT chẵn có ít nhất 1 lân cận cũng là GT chẵn //181</h3>
@@ -206,16 +110,6 @@
 		</div>
 	</div>
 
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">Sắp xếp các số dương tăng dần, số âm giảm dần//263</h3>
-			<? $bt_18 = duongtang_amgiam($arr_1);
-			foreach ((array)$bt_18 as $value) {
-				echo $value.'<br>';
-			}
-			?>
-		</div>
-	</div>
 
 	<?php
 		if($_POST){
