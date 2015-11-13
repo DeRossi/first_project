@@ -225,7 +225,6 @@
 		}
 	}
 
-
 	// Bai 154 : Vị trí có giá trị âm lớn nhất (Nếu không có GT thì trả về -1)
 	function vitri_GT_am_max(array $arr_1){
 		$min = 0;
@@ -336,6 +335,17 @@
 			}
 		}
 		return $arr_1;
+	}
+
+
+	// MATRIX
+	function create_rand_matrix_array_songuyen(){
+		for($i=0;$i<10;$i++){
+			for ($j=0; $j < 10; $j++) {
+				$array[$i][$j] = 500-rand(0,1000);
+			}
+		}
+		return $array;
 	}
 ?>
 

@@ -52,6 +52,40 @@
 
 <div class="container">
 	<h1 style="text-align:center">Thao tác với Ma Trận - BT 6</h1>
+	<?php
+		//$arr_1 = create_rand_matrix_array_songuyen();
+		$arr_1 = Array(
+			'01' => array("01"=>"1"),
+			'02' => array("01"=>"2"),
+			'03' => array("01"=>"3"),
+			'04' => array("01"=>"4"),
+			'05' => array("01"=>"5"),
+			'06' => array("01"=>"6"),
+		);
+	?>
+	<div class="well">
+		<?
+		echo('<pre>');
+		print_r($arr_1);
+		echo('</pre>');
+
+		for($i=0;$i<10;$i++){
+			for ($j=0; $j < 10; $j++) {
+				$array[$i][$j] = 500-rand(0,1000);
+				echo "<tr>";
+				if($j == 9){
+					echo('<td style="width: 20px"> ' .$array[$i][$j]. ' </td><br>');
+				}else{
+					echo('<td style="width: 20px"> ' .$array[$i][$j]. ' </td>');
+				}
+				echo "</tr>";
+			}
+		}
+
+
+		?>
+	</div>
+
 </div>
 
 </body>

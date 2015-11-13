@@ -33,6 +33,7 @@
 				<li><a href="/Lesson3">Lesson 3</a></li>
 				<li><a href="/Lesson4">Lesson 4</a></li>
 				<li><a href="/Lesson5">Lesson 5</a></li>
+				<li><a href="/Lesson6">Lesson 6</a></li>
 			</ul>
 			<form class="navbar-form navbar-left" role="search">
 				<div class="form-group">
@@ -53,6 +54,7 @@
 				<a href="/Lesson3" class="list-group-item">BAI TAP 3 - Regular Expression Basic</a>
 				<a href="/Lesson4" class="list-group-item">BAI TAP 4 - Thao tác với Array</a>
 				<a href="/Lesson5" class="list-group-item">BAI TAP 5 - Thao tác với Array [Kỹ thuật tìm kiếm & tính tổng]</a>
+				<a href="/Lesson6" class="list-group-item">BAI TAP 6 - Thao tác với Ma trận</a>
 			</div>
 		</div>
 
