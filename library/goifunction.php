@@ -339,13 +339,76 @@
 
 
 	// MATRIX
-	function create_rand_matrix_array_songuyen(){
-		for($i=0;$i<10;$i++){
-			for ($j=0; $j < 10; $j++) {
+	function create_rand_matrix_array_songuyen($rong, $dai){
+		for($i=0;$i< $rong;$i++){
+			for ($j=0; $j < $dai; $j++) {
 				$array[$i][$j] = 500-rand(0,1000);
 			}
 		}
 		return $array;
+	}
+
+	function create_rand_matrix_array_sothuc(){
+		for($i=0;$i<10;$i++){
+			for ($j=0; $j < 10; $j++) {
+				$array[$i][$j] = rand(0,1000)/100;
+			}
+		}
+		return $array;
+	}
+
+	function create_rand_sort_matrix_array_sothuc(){ // i : rộng - j : dài
+		//$array[$i][$j] = rand(0,1000)/100;
+		for($i=0; $i < 5; $i++){
+			for ($j=0; $j < 5; $j++) {
+				$array[$i][$j] = 500-rand(0,500);
+			}
+		}
+		return $array;
+	}
+
+	function bubblesort(){
+		$array = create_rand_sort_matrix_array_sothuc();
+		for ($k=0; $k < 5; $k++) {
+			for ($i=0; $i < (5-1); $i++) { 
+				for ($j=(5-1); $j > $i; $j--) { 
+					if($array[$k][$j] < $array[$k][$j-1]){
+						$tmp = $array[$k][$j];
+						$array[$k][$j] = $array[$k][$j-1];
+						$array[$k][$j-1] = $tmp;
+					}
+				}
+			}
+		}
+		return $array;
+	}
+
+	function create_rand_matrix_array_songuyento(){
+		for($i=0;$i<100;$i++){
+			for ($j=0; $j < 100; $j++) {
+				$array[$i][$j] = 500-rand(0,1000);
+				if(testsonguyento_2($array[$i][$j])){
+					$arr_songuyento[][] = 'hp';
+				}
+			}
+		}
+		return count($arr_songuyento);
+	}
+
+	function testsonguyento_2($no){
+		if($no == 2){
+			$no++;
+			return true;
+		}elseif($no == 1 || ($no % 2 == 0) || ($no < 0)){
+			return false;
+		}
+		for ($i=3; $i <= ceil(sqrt($no)) ; $i= $i+2) {
+			if($no % $i == 0 || ($no < 0)){
+				return false;
+			}
+		}
+		$no++;
+		return true;
 	}
 ?>
 

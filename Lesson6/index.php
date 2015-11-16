@@ -51,39 +51,89 @@
 	</nav>
 
 <div class="container">
+	<? include("../library/goifunction.php"); ?>
 	<h1 style="text-align:center">Thao tác với Ma Trận - BT 6</h1>
-	<?php
-		//$arr_1 = create_rand_matrix_array_songuyen();
-		$arr_1 = Array(
-			'01' => array("01"=>"1"),
-			'02' => array("01"=>"2"),
-			'03' => array("01"=>"3"),
-			'04' => array("01"=>"4"),
-			'05' => array("01"=>"5"),
-			'06' => array("01"=>"6"),
-		);
-	?>
-	<div class="well">
+
+	<div class="well"> <!-- Ma tran so nguyen -->
+		<h4>Ma trận số nguyên (Phần 1)</h4>
+		<form action="" method="post">
+			Chiều dài : <input type="text" name="txt_dai">
+			Chiều rộng : <input type="text" name="txt_rong">
+			<button type="submit" name="btnsubmit">Xuất ma trận</button>
+		</form>
 		<?
-		echo('<pre>');
-		print_r($arr_1);
-		echo('</pre>');
+		if(isset($_POST["btnsubmit"])){
+			$dai = $_POST["txt_dai"]; $rong = $_POST["txt_rong"];
+		for($i=0;$i< $rong; $i++){ ?>
+		<table class="table table-hover">
+			<tbody>
+				<tr>
+			<? for ($j=0; $j < $dai; $j++) {
+				$array = create_rand_matrix_array_songuyen($rong, $dai);
+				?>
+					<td style="width:60px"><? echo($array[$i][$j]); ?></td>
+				<? } ?>
+				</tr>
+			</tbody>
+		</table>
+			<? } } ?>
+	</div>
 
-		for($i=0;$i<10;$i++){
-			for ($j=0; $j < 10; $j++) {
-				$array[$i][$j] = 500-rand(0,1000);
-				echo "<tr>";
-				if($j == 9){
-					echo('<td style="width: 20px"> ' .$array[$i][$j]. ' </td><br>');
-				}else{
-					echo('<td style="width: 20px"> ' .$array[$i][$j]. ' </td>');
-				}
-				echo "</tr>";
-			}
-		}
+	<div class="well"> <!-- Ma tran so nguyen to -->
+	<h4>Ma trận số nguyên tố (Phần 2)</h4>
+		<?
+		for($i=0;$i<10;$i++){ ?>
+		<table class="table table-hover">
+			<tbody>
+				<tr>
+			<? for ($j=0; $j < 10; $j++) {
+				$array = create_rand_matrix_array_songuyento();
+				?>
+					<td style="width:60px"><? echo($array[$i][$j]); ?></td>
+				<? } ?>
+				</tr>
+			</tbody>
+		</table>
+			<? } ?>
+	</div>
 
+	<div class="well"> <!-- Ma tran so thap phan -->
+	<h4>Ma trận số thập phân (Phần 3, 4)</h4>
+		<?
+		for($i=0;$i<10;$i++){ ?>
+		<table class="table table-hover">
+			<tbody>
+				<tr>
+			<? for ($j=0; $j < 10; $j++) {
+				$array = create_rand_matrix_array_sothuc();
+				$array_total += $array[$i][$j];
+				?>
+					<td style="width:60px"><? echo($array[$i][$j]); ?></td>
+				<? } ?>
+				</tr>
+			</tbody>
+		</table>
+			<? } echo('=> Tổng giá trị các phần tử trong ma trận này : ' .$array_total); ?>
+	</div>
 
-		?>
+	<div class="well"> <!-- Sap xep Ma tran so thap phan -->
+	<h4>Sắp xếp ma trận số thập phân (Phần 5)</h4>
+		<?
+		for($i=0; $i<5; $i++){ ?>
+		<table class="table table-hover">
+			<tbody>
+				<tr>
+			<? for ($j=0; $j < 5; $j++) {
+				//$array = create_rand_sort_matrix_array_sothuc();
+				$array = bubblesort();
+
+				?>
+					<td style="width:60px"><? echo($array[$i][$j]); ?></td>
+				<? } ?>
+				</tr>
+			</tbody>
+		</table>
+			<? } ?>
 	</div>
 
 </div>
