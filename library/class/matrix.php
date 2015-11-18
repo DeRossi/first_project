@@ -5,7 +5,7 @@
 class Matrix
 {
 	public function __construct(){
-		$this->data="333";
+		$this->data="Matrix data";
 	}
 	
 	public function create_evironment($e){
@@ -22,6 +22,7 @@ class Matrix
 class Evironment{
 	public $color;
 	function __construct(){
+		$this->id = rand(0,9999);
 		$this->color ="red";
 	}
 
@@ -32,6 +33,7 @@ class Evironment{
 
 	function show(){
 		echo "<h2>".__CLASS__." >> ".__FUNCTION__."</h2>";
+		echo "<h4>ID:".$this->id."</h4>";
 		echo $this->color;
 	}
 }

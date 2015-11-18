@@ -10,12 +10,14 @@ $matrix_1->create_evironment($environment_2);
 
 $matrix_1->show();
 
+echo "<h1>Var 1</h1>";
 $matrix_1->mye[0]->show();
 
 $matrix_1->mye[0]->change_color();
 
 $matrix_1->mye[0]->show();
 
+echo "<h1>Var 2</h1>";
 $matrix_1->mye[1]->show();
 
 $matrix_1->mye[1]->change_color();
