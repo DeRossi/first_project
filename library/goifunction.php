@@ -398,17 +398,56 @@
 		return $array;
 	}
 
-	function create_rand_matrix_array_songuyento(){
+	function create_rand_matrix_array_songuyento(){ //
 		for($i=0;$i<100;$i++){
 			for ($j=0; $j < 100; $j++) {
-				$array[$i][$j] = 500-rand(0,1000);
-				if(testsonguyento_2($array[$i][$j])){
-					$arr_songuyento[][] = 'hp';
-				}
+				$array[$i][$j] = rand(0,500);
 			}
 		}
-		return count($arr_songuyento);
+		return ($array);
 	}
+
+	function test($cao){
+		for ($x=1; $x <= $cao; $x++) {
+			for ($j=0; $j < $cao-$x; $j++) {
+				echo " ";
+			}
+			for ($j=0; $j < $x; $j++) {
+				echo("Happy ★");
+			}
+			echo "\n";
+		}
+	}
+
+	/*function rotate_matrix(){
+		for (k = 0; k < m; k++)
+			for (j=0; j<n; j++) a[k][j] = k*m + j+1;
+
+				printf("\nMa tran ban dau:\n");
+		for (k = 0; k < m; k++)     // m hang, n cot
+		{
+			for (j=0; j<n; j++) printf("%4d",a[k][j]);
+				printf("\n");
+		}
+
+		// (Moi) [k][j] <-- [m-1-j][k] (Cu)
+		printf("\nXoay 90 do cung chieu kim dong ho:\n");
+
+		for (k = 0; k < n; k++)     // n hang, m cot
+		{
+			for (j=0; j<m; j++) printf("%4d",a[m-1-j][k]);
+				printf("\n");
+		}
+
+		// (Moi) [k][j] <-- [j][n-1-k] (Cu)
+		printf("\nXoay 90 do nguoc chieu kim dong ho:\n");
+
+		for (k = 0; k < n; k++)     // n hang, m cot
+		{
+			for (j=0; j<m; j++) printf("%4d",a[j][n-1- k]);
+				printf("\n");
+		}
+	}*/
 
 	function testsonguyento_2($no){
 		if($no == 2){

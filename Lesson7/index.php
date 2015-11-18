@@ -5,7 +5,7 @@
 <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <script src="//code.jquery.com/jquery.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<title>Lesson 6 : Matrix</title>
+	<title>Lesson 7 : Matrix</title>
 </head>
 <body>
 	<!-- jQuery -->
@@ -44,7 +44,8 @@
 				<li><a href="/Lesson3">Lesson 3</a></li>
 				<li><a href="/Lesson4">Lesson 4</a></li>
 				<li><a href="/Lesson5">Lesson 5</a></li>
-				<li class="active"><a href="/Lesson6">Lesson 6</a></li>
+				<li><a href="/Lesson6">Lesson 6</a></li>
+				<li class="active"><a href="/Lesson7">Lesson 7</a></li>
 			</ul>
 			<form class="navbar-form navbar-left" role="search">
 				<div class="form-group">
@@ -57,48 +58,70 @@
 
 <div class="container">
 	<? include("../library/goifunction.php"); ?>
-	<h1 style="text-align:center">Thao tác với Ma Trận - BT 6</h1>
+	<h1 style="text-align:center">Thao tác với Ma Trận - BT 7</h1>
 
 	<div class="well"> <!-- Ma tran so nguyen -->
-		<h4>Ma trận số nguyên (Phần 1)</h4>
+		<h4>Ma trận tam giác cân (Phần 1)</h4>
 		<form action="" method="post">
-			Chiều dài : <input type="text" name="txt_dai">
-			Chiều rộng : <input type="text" name="txt_rong">
-			<button type="submit" name="btnsubmit">Xuất ma trận (Tối đa 15)</button>
+			Nhập chiều cao : <input type="text" name="txt_cao">
+			<button type="submit" name="btnsubmit" value="submit_1">Xuất ma trận nửa hình tam giác (Tối đa 10)</button>&nbsp;&nbsp;
+			<button type="submit" name="btnsubmit" value="submit_2">Xuất ma trận tam giác cân (Tối đa 10)</button>
 		</form>
 		<?
-		if(isset($_POST["btnsubmit"]) && ($_POST["txt_dai"] <= 15) && ($_POST["txt_rong"] <= 15)){
-			$dai = $_POST["txt_dai"]; $rong = $_POST["txt_rong"];
-		for($i=0;$i< $rong; $i++){ ?>
+		if(isset($_POST["btnsubmit"]) && ($_POST["txt_cao"] <= 10)){
+			$cao = $i = $_POST["txt_cao"];
+			if($_POST["btnsubmit"] == "submit_1"){
+		while($i--) {
+		?>
 		<table class="table table-hover">
 			<tbody>
 				<tr>
-			<? for ($j=0; $j < $dai; $j++) {
-				$array = create_rand_matrix_array_songuyen($rong, $dai);
-				?>
-					<td style="width:60px"><? echo($array[$i][$j]); ?></td>
-				<? } ?>
+					<td style="width:60px">
+						<?
+							echo(str_repeat('♂ Happy ★ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;', $cao - $i). "\n");
+							//echo(str_repeat('♂ Happy ★ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;', $i - $cao). "\n");
+						?>
+						</td>
 				</tr>
 			</tbody>
 		</table>
-			<? } }
-			else{ ?>
-				<div class="alert">
-					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-					<strong>Yêu cầu xuất ma trận : </strong> Chiều dài và chiều rộng ma trận trong khoảng (15 x15)
-				</div>
-			<? } ?>
+		<? } }
+		if($_POST["btnsubmit"] == "submit_2"){
+			for ($x=1; $x <= $cao; $x++) {
+				for ($j=0; $j < $cao-$x; $j++) {
+					echo " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+				}
+				for ($j=0; $j < $x; $j++) {
+					echo("Happy ★ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \n");
+				}
+				echo "\n";
+			}
+		}
+		else{
+		?>
+			<div class="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<strong>Yêu cầu xuất ma trận : </strong> Chiều cao ma trận trong khoảng (Max : 15)
+			</div>
+		<? } } ?>
+
 	</div>
 
-	<div class="well"> <!-- Ma tran so nguyen to -->
-	<h4>Ma trận số nguyên tố - Red Color (Phần 2) <button type="button" onclick="refreshPage()" class="btn btn-default">Reload Random Matrix</button></h4>
+
+
+
+	<div class="well"> <!-- Ma tran  -->
+	<h4>Xoay ma trận (Phần 2) <button type="button" onclick="refreshPage()" class="btn btn-default">Reload Random Matrix</button>
+	<button type="button" class="btn btn-default" onclick="bubblesort();">Rotate Left Matrix</button>
+	<button type="button" class="btn btn-default" onclick="">Rotate Right Matrix</button>
+	</h4>
 		<?
 		$array = create_rand_matrix_array_songuyento();
-		for($i=0; $i<10; $i++){ ?>
+		for($i=0; $i< 5; $i++){ ?>
 		<table class="table table-hover">
 			<tbody>
 				<tr>
-			<? for ($j=0; $j < 10; $j++) {
+			<? for ($j=0; $j < 5; $j++) {
 				?>
 					<td style="width:60px">
 						<? 	if(testsonguyento_2($array[$j][$i])) {
@@ -115,41 +138,51 @@
 			<? } ?>
 	</div>
 
-	<div class="well"> <!-- Ma tran so thap phan -->
-	<h4>Ma trận số thập phân (Phần 3, 4) <button type="button" onclick="refreshPage()" class="btn btn-default">Reload Random Matrix</button></h4>
+	<div class="well">
 		<?
-		for($i=0; $i<10; $i++){ ?>
+		$array = create_rand_matrix_array_songuyento();
+		for($i=0; $i< 5; $i++){ ?>
 		<table class="table table-hover">
 			<tbody>
 				<tr>
-			<? for ($j=0; $j < 10; $j++) {
-				$array = create_rand_matrix_array_sothuc();
-				$array_total += $array[$i][$j];
-				?>
-					<td style="width:60px"><? echo($array[$i][$j]); ?></td>
-				<? } ?>
-				</tr>
-			</tbody>
-		</table>
-			<? } echo('=> Tổng giá trị các phần tử trong ma trận này : ' .$array_total); ?>
+					<? for ($j=0; $j < 5; $j++) {
+						?>
+						<td style="width:60px">
+							<? 	if(testsonguyento_2($array[$j][$i])) {
+								echo('<b style="color:red">' .$array[$j][$i]. '</b>');
+							}else{
+								echo($array[$j][$i]);
+							}
+							?>
+						</td>
+						<? } ?>
+					</tr>
+				</tbody>
+			</table>
+			<? } ?>
 	</div>
 
-	<div class="well"> <!-- Sap xep Ma tran so thap phan -->
-	<h4>Sắp xếp ma trận số thập phân (Phần 5) <button type="button" onclick="refreshPage()" class="btn btn-default">Reload Random Matrix</button></h4>
+	<div class="well">
 		<?
-		$array = bubblesort();
-		for($i=0; $i<10; $i++){ ?>
+		$array = create_rand_matrix_array_songuyento();
+		for($i=0; $i< 5; $i++){ ?>
 		<table class="table table-hover">
 			<tbody>
 				<tr>
-			<? for ($j=0; $j < 10; $j++) {
-				//$array = create_rand_sort_matrix_array_sothuc();
-				?>
-					<td style="width:60px"><? echo($array[$i][$j]); ?></td>
-				<? } ?>
-				</tr>
-			</tbody>
-		</table>
+					<? for ($j=0; $j < 5; $j++) {
+						?>
+						<td style="width:60px">
+							<? 	if(testsonguyento_2($array[$j][$i])) {
+								echo('<b style="color:red">' .$array[$j][$i]. '</b>');
+							}else{
+								echo($array[$j][$i]);
+							}
+							?>
+						</td>
+						<? } ?>
+					</tr>
+				</tbody>
+			</table>
 			<? } ?>
 	</div>
 
