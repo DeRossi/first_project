@@ -358,25 +358,40 @@
 	}
 
 	function create_rand_sort_matrix_array_sothuc(){ // i : rộng - j : dài
-		//$array[$i][$j] = rand(0,1000)/100;
-		for($i=0; $i < 5; $i++){
-			for ($j=0; $j < 5; $j++) {
-				$array[$i][$j] = 500-rand(0,500);
+		//$array[$i][$j] = 500-rand(0,500);
+		for($i=0; $i < 10; $i++){
+			for ($j=0; $j < 10; $j++) {
+				$array[$i][$j] = rand(0,1000)/100;
 			}
 		}
 		return $array;
 	}
 
-	function bubblesort(){
+	/*function bubblesort(){
 		$array = create_rand_sort_matrix_array_sothuc();
 		for ($k=0; $k < 5; $k++) {
-			for ($i=0; $i < (5-1); $i++) { 
-				for ($j=(5-1); $j > $i; $j--) { 
+			for ($i=0; $i < (5-1); $i++) {
+				for ($j=(5-1); $j > $i; $j--) {
 					if($array[$k][$j] < $array[$k][$j-1]){
 						$tmp = $array[$k][$j];
 						$array[$k][$j] = $array[$k][$j-1];
 						$array[$k][$j-1] = $tmp;
+
+						$array_sort[] = $array[$k][$j-1];
 					}
+				}
+			}
+		}
+		return $array;
+	}*/
+	function bubblesort(){
+		$array = create_rand_sort_matrix_array_sothuc();
+		for ($i=0; $i < (10*10-1); $i++) {
+			for ($j=$i+1; $j < (10*10); $j++) {
+				if($array[$i/10][$i%10] > $array[$j/10][$j%10]){
+					$tmp = $array[$i/10][$i%10];
+					$array[$i/10][$i%10] = $array[$j/10][$j%10];
+					$array[$j/10][$j%10] = $tmp;
 				}
 			}
 		}

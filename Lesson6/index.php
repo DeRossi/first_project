@@ -119,14 +119,13 @@
 	<div class="well"> <!-- Sap xep Ma tran so thap phan -->
 	<h4>Sắp xếp ma trận số thập phân (Phần 5)</h4>
 		<?
-		for($i=0; $i<5; $i++){ ?>
+		$array = bubblesort();
+		for($i=0; $i<10; $i++){ ?>
 		<table class="table table-hover">
 			<tbody>
 				<tr>
-			<? for ($j=0; $j < 5; $j++) {
+			<? for ($j=0; $j < 10; $j++) {
 				//$array = create_rand_sort_matrix_array_sothuc();
-				$array = bubblesort();
-
 				?>
 					<td style="width:60px"><? echo($array[$i][$j]); ?></td>
 				<? } ?>
