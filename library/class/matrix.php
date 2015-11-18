@@ -4,11 +4,13 @@
 */
 class Matrix
 {
-	public function __construct($e){
-		$this->mye = $e;
+	public function __construct(){
 		$this->data="333";
 	}
 	
+	public function create_evironment($e){
+		$this->mye[] = $e;
+	}
 
 	public function show(){
 		echo "<h2>".__CLASS__." >> ".__FUNCTION__."</h2>";
