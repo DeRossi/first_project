@@ -23,46 +23,43 @@
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>
 		<script>
-$(document).keyup(function(event){
-	if(event.which==27){
-		$("span").text(event.which);
-		$.post('do_motion.php', {param1: 'value1'}, function(data, textStatus, xhr) {
-			$("div").html(data);
-		});
-		event.preventDefault();
-		return false;
-	}
-	if(event.which==28){
-		$.post('do_motion.php', {param1: 'value1'}, function(data, textStatus, xhr) {
-			$("div").html(data);
-		});
-		event.preventDefault();
-		return false;
-	}
-	if(event.which==29){
-		$.post('do_motion.php', {param1: 'value1'}, function(data, textStatus, xhr) {
-			$("div").html(data);
-		});
-		event.preventDefault();
-		return false;
-	}
-	if(event.which==30){
-		$.post('do_motion.php', {param1: 'value1'}, function(data, textStatus, xhr) {
-			$("div").html(data);
-		});
-		event.preventDefault();
-		return false;
-	}
+			$(document).ready(function() {
+					$.post('do_motion.php', {action: 'moveleft'}, function(data, textStatus, xhr) {
+						$("div").html(data);
+					});
+			});
+			$(document).keyup(function(event){					
+				if(event.which==37){
+					$.post('do_motion.php', {action: 'moveleft'}, function(data, textStatus, xhr) {
+						$("div").html(data);
+					});
+					event.preventDefault();
+					return false;
+				}
+				if(event.which==38){
+					$.post('do_motion.php', {action: 'moveup'}, function(data, textStatus, xhr) {
+						$("div").html(data);
+					});
+					event.preventDefault();
+					return false;
+				}
+				if(event.which==39){
+					$.post('do_motion.php', {action: 'moveright'}, function(data, textStatus, xhr) {
+						$("div").html(data);
+					});
+					event.preventDefault();
+					return false;
+				}
+				if(event.which==40){
+					$.post('do_motion.php', {action: 'movedown'}, function(data, textStatus, xhr) {
+						$("div").html(data);
+					});
+					event.preventDefault();
+					return false;
+				}
 
-	if(event.which==113){
-		$.post('do_motion.php', {param1: 'value1'}, function(data, textStatus, xhr) {
-			$("div").html(data);
-		});
-        
-        event.preventDefault();
-        return false;
-    }
-});
+		
+			});
 		</script>
 		<!-- Bootstrap JavaScript -->
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>

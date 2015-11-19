@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <style>
 .clearfix {
     clear: both;
@@ -15,10 +16,21 @@
 }
 </style>
 <?php 
-	require(__DIR__."/../library/class/matrix.php") ;
-	$matrix_1 = new Matrix(10);
-	$matrix_1->create_matrix();
-	$matrix_1->show_matrix();
+    require(__DIR__."/../library/class/motion.php") ;
+    if(!isset($_SESSION["count"])){
+        $_SESSION["count"]=0;
+    }
+    $_SESSION["count"]++;
+    $matrix_1 = new Motion(10);
+    if(!isset($_SESSION["count"])){
+        $matrix_1->create_matrix();
+    }else{
+        $matrix_1->open();
+    }
 
+    $matrix_1->move($_POST["action"]);
+    $matrix_1->show_motion();
+    $matrix_1->save();
+    
 
 ?>
