@@ -1,11 +1,3 @@
-<?php
-session_start();
-if($_GET["x"] == "111"){
-	$_SESSION["keysss"]==1;
-}else{
-	die("<h1>Stay out</h1>");
-}
- ?>
 <style>
 .clearfix {
     clear: both;
@@ -25,10 +17,13 @@ if($_GET["x"] == "111"){
 <?php 
 	require(__DIR__."/../library/class/matrix.php") ;
 	$s = microtime();
-	$matrix_1 = new Matrix(5);
+	$matrix_1 = new Matrix(10);
 	$matrix_1->create_matrix();
 
 	$matrix_1->bubblesort();
+	$matrix_1->show_matrix();
+
+	$matrix_1->symmetry();
 	$matrix_1->show_matrix();
 
 	$matrix_1->route_left();

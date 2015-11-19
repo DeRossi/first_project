@@ -66,6 +66,17 @@ class Matrix implements i_matrix
 		$this->content = $new_array;
 	}
 
+	public function symmetry(){
+		echo "<h1>".__CLASS__." > ".__FUNCTION__."</h1>";
+		$w= $this->width;
+		for($i=0;$i<$this->width;$i++){//cột
+			for($j=0;$j<$this->width;$j++){//hàng
+				$new_array[$i][$j] = $this->content[$i][($w-1)-$j];
+			}
+		}
+		$this->content = $new_array;
+	}
+
 	public function bubblesort(){
 		echo "<h1>".__CLASS__." > ".__FUNCTION__."</h1>";
 		$w = $this->width;
