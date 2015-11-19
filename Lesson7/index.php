@@ -118,9 +118,34 @@
 				?>
 					<td style="width:60px">
 						<? 	if(testsonguyento_2($array[$i][$j])) {
-								echo('<b style="color:red">' .$array[$i][$j]. '</b>');
+								echo('<button><b style="color:red">' .$array[$i][$j]. '</b></button>');
 							}else{
-								echo($array[$i][$j]);
+								echo('<button>' .$array[$i][$j]. '</button>');
+							}
+						?>
+					</td>
+				<? } ?>
+				</tr>
+			</tbody>
+		</table>
+			<? } ?>
+	</div>
+
+	<div class="well"> <!-- Ma tran  -->
+	<h4>Ma trận đối xứng</h4>
+		<?
+		$array = create_matrix();
+		for($i=0; $i < 10; $i++){ ?>
+		<table class="table table-hover">
+			<tbody>
+				<tr>
+			<? for ($j=(10-1); $j >= 0; $j--) {
+				?>
+					<td style="width:60px">
+						<? 	if(testsonguyento_2($array[$i][$j])) {
+								echo('<button><b style="color:red">' .$array[$i][$j]. '</b></button>');
+							}else{
+								echo('<button>' .$array[$i][$j]. '</button>');
 							}
 						?>
 					</td>
@@ -143,9 +168,9 @@
 				?>
 					<td style="width:60px">
 						<? 	if(testsonguyento_2($array[$i][$j])) {
-								echo('<b style="color:red">' .$array[$i][$j]. '</b>');
+								echo('<button><b style="color:red">' .$array[$i][$j]. '</b></button>');
 							}else{
-								echo($array[$i][$j]);
+								echo('<button>' .$array[$i][$j]. '</button>');
 							}
 						?>
 					</td>
@@ -168,9 +193,9 @@
 				?>
 					<td style="width:60px">
 						<? 	if(testsonguyento_2($array[$i][$j])) {
-								echo('<b style="color:red">' .$array[$i][$j]. '</b>');
+								echo('<button><b style="color:red">' .$array[$i][$j]. '</b></button>');
 							}else{
-								echo($array[$i][$j]);
+								echo('<button>' .$array[$i][$j]. '</button>');
 							}
 						?>
 					</td>

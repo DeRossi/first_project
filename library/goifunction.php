@@ -466,6 +466,10 @@
 		}
 		return $array_rotate;
 	}
+
+	function matrix_doixung(){
+		//$array
+	}
 ?>
 
 
