@@ -1,40 +1,36 @@
-<?php 
+<?php
+require "interface_matrix.php";
 /**
 * 
 */
-class Matrix
+class Matrix implements i_matrix
 {
-	public function __construct(){
-		$this->data="Matrix data";
-	}
-	
-	public function create_evironment($e){
-		$this->mye[] = $e;
-	}
-
-	public function show(){
-		echo "<h2>".__CLASS__." >> ".__FUNCTION__."</h2>";
-		echo $this->data;
+	public $content;
+	public function create_matrix(){
+		for($i=0;$i<10;$i++){
+			for($j=0;$j<10;$j++){
+				$this->content[$i][$j]=rand(0,20);
+			}
+		}
 	}
 
-} 
-
-class Evironment{
-	public $color;
-	function __construct(){
-		$this->id = rand(0,9999);
-		$this->color ="red";
+	public function replace_matrix($value,$replace){
+		for($i=0;$i<10;$i++){
+			for($j=0;$j<10;$j++){
+				$this->content[$i][$j]= str_replace($value,$replace,$this->content[$i][$j]);
+			}
+		}
 	}
 
-	function change_color(){
-		echo "<h2>".__CLASS__." >> ".__FUNCTION__."</h2>";
-		$this->color = "blue";
+	public function show_matrix(){
+		for($i=0;$i<10;$i++){
+			for($j=0;$j<10;$j++){
+				echo $this->content[$i][$j]." - ";
+			}
+			echo "<br>";
+		}
 	}
 
-	function show(){
-		echo "<h2>".__CLASS__." >> ".__FUNCTION__."</h2>";
-		echo "<h4>ID:".$this->id."</h4>";
-		echo $this->color;
-	}
 }
+
 ?>
