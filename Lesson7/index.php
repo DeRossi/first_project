@@ -71,8 +71,8 @@
 		if(isset($_POST["btnsubmit"]) && ($_POST["txt_cao"] <= 10) && (is_numeric($_POST["txt_cao"]))){
 			$cao = $i = $_POST["txt_cao"];
 			if($_POST["btnsubmit"] == "submit_1"){
-				for ($i=0; $i < $cao; $i++) {
-					for ($j=0; $j < ($cao - $i); $j++) {
+				for ($i=1; $i <= $cao; $i++) {
+					for ($j=1; $j <= $i; $j++) {
 						echo "♂ Happy ★ &nbsp;&nbsp;";
 					}
 					echo("<br>");
