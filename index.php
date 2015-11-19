@@ -30,7 +30,7 @@
 				<li><a href="/Lesson1">Lesson 1</a></li>
 				<li><a href="/Lesson1b">Lesson 1B</a></li>
 				<li><a href="/Lesson2">Lesson 2</a></li>
-				<li><a href="/Lesson3">Lesson 3</a></li>
+				<li><a href="/Lesson3/regular_expression_basic.php">Lesson 3</a></li>
 				<li><a href="/Lesson4">Lesson 4</a></li>
 				<li><a href="/Lesson5">Lesson 5</a></li>
 				<li><a href="/Lesson6">Lesson 6</a></li>
@@ -52,7 +52,7 @@
 				<a href="/Lesson1" class="list-group-item">BAI TAP 1 - do Ajax</a>
 				<a href="/Lesson1b" class="list-group-item">BAI TAP 1b - do Ajax</a>
 				<a href="/Lesson2" class="list-group-item">BAI TAP 2</a>
-				<a href="/Lesson3" class="list-group-item">BAI TAP 3 - Regular Expression Basic</a>
+				<a href="/Lesson3/regular_expression_basic.php" class="list-group-item">BAI TAP 3 - Regular Expression Basic</a>
 				<a href="/Lesson4" class="list-group-item">BAI TAP 4 - Thao tác với Array</a>
 				<a href="/Lesson5" class="list-group-item">BAI TAP 5 - Thao tác với Array [Kỹ thuật tìm kiếm & tính tổng]</a>
 				<a href="/Lesson6" class="list-group-item">BAI TAP 6 - Thao tác với Ma trận</a>
