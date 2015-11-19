@@ -68,66 +68,59 @@
 			<button type="submit" name="btnsubmit" value="submit_2">Xuất ma trận tam giác cân (Tối đa 10)</button>
 		</form>
 		<?
-		if(isset($_POST["btnsubmit"]) && ($_POST["txt_cao"] <= 10)){
+		if(isset($_POST["btnsubmit"]) && ($_POST["txt_cao"] <= 10) && (is_numeric($_POST["txt_cao"]))){
 			$cao = $i = $_POST["txt_cao"];
 			if($_POST["btnsubmit"] == "submit_1"){
-		while($i--) {
-		?>
-		<table class="table table-hover">
-			<tbody>
-				<tr>
-					<td style="width:60px">
-						<?
-							echo(str_repeat('♂ Happy ★ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;', $cao - $i). "\n");
-							//echo(str_repeat('♂ Happy ★ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;', $i - $cao). "\n");
-						?>
-						</td>
-				</tr>
-			</tbody>
-		</table>
-		<? } }
-		if($_POST["btnsubmit"] == "submit_2"){
-			for ($x=1; $x <= $cao; $x++) {
-				for ($j=0; $j < $cao-$x; $j++) {
-					echo " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+				for ($i=0; $i < $cao; $i++) {
+					for ($j=0; $j < ($cao - $i); $j++) {
+						echo "♂ Happy ★ &nbsp;&nbsp;";
+					}
+					echo("<br>");
 				}
-				for ($j=0; $j < $x; $j++) {
-					echo("Happy ★ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \n");
-				}
-				echo "\n";
 			}
-		}
-		else{
-		?>
-			<div class="alert">
-				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-				<strong>Yêu cầu xuất ma trận : </strong> Chiều cao ma trận trong khoảng (Max : 15)
-			</div>
-		<? } } ?>
+			if($_POST["btnsubmit"] == "submit_2"){ //
+				for ($x=0; $x < $cao; $x++) { //x:so dong
+					for ($j=0; $j < ($cao*2-1); $j++) {
+						if($j >= ($cao - $x - 1)&& $j <= ($cao + $x -1)){
+							echo "♂ Happy ★ &nbsp;&nbsp;";
+						}else{
+							$run_whitespace = 1; $limit = 25;
+							while ($run_whitespace <= $limit) {
+								$run_whitespace++;
+								echo "&nbsp;";
+							}
+						}
+					}
+					echo("<br>");
+				}
+			}
+			else{
+				?>
+				<div class="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					<strong>Yêu cầu xuất ma trận : </strong> Chiều cao ma trận trong khoảng (Max : 15)
+				</div>
+				<? } } ?>
 
 	</div>
 
 
 
-
 	<div class="well"> <!-- Ma tran  -->
-	<h4>Xoay ma trận (Phần 2) <button type="button" onclick="refreshPage()" class="btn btn-default">Reload Random Matrix</button>
-	<button type="button" class="btn btn-default" onclick="bubblesort();">Rotate Left Matrix</button>
-	<button type="button" class="btn btn-default" onclick="">Rotate Right Matrix</button>
-	</h4>
+	<h4>Xoay ma trận (Phần 2)</h4>
 		<?
-		$array = create_rand_matrix_array_songuyento();
-		for($i=0; $i< 5; $i++){ ?>
+		$array = create_matrix();
+		for($i=0; $i < 10; $i++){ ?>
 		<table class="table table-hover">
 			<tbody>
 				<tr>
-			<? for ($j=0; $j < 5; $j++) {
+			<? for ($j=0; $j < 10; $j++) {
 				?>
 					<td style="width:60px">
-						<? 	if(testsonguyento_2($array[$j][$i])) {
-								echo('<b style="color:red">' .$array[$j][$i]. '</b>');
+						<? 	if(testsonguyento_2($array[$i][$j])) {
+								echo('<b style="color:red">' .$array[$i][$j]. '</b>');
 							}else{
-								echo($array[$j][$i]);
+								echo($array[$i][$j]);
 							}
 						?>
 					</td>
@@ -139,50 +132,52 @@
 	</div>
 
 	<div class="well">
+	<h4>Matrix - Rotate Left 90</h4>
 		<?
-		$array = create_rand_matrix_array_songuyento();
-		for($i=0; $i< 5; $i++){ ?>
+		$array = rotate_left();
+		for($i=0; $i < 10; $i++){ ?>
 		<table class="table table-hover">
 			<tbody>
 				<tr>
-					<? for ($j=0; $j < 5; $j++) {
-						?>
-						<td style="width:60px">
-							<? 	if(testsonguyento_2($array[$j][$i])) {
-								echo('<b style="color:red">' .$array[$j][$i]. '</b>');
+			<? for ($j=0; $j < 10; $j++) {
+				?>
+					<td style="width:60px">
+						<? 	if(testsonguyento_2($array[$i][$j])) {
+								echo('<b style="color:red">' .$array[$i][$j]. '</b>');
 							}else{
-								echo($array[$j][$i]);
+								echo($array[$i][$j]);
 							}
-							?>
-						</td>
-						<? } ?>
-					</tr>
-				</tbody>
-			</table>
+						?>
+					</td>
+				<? } ?>
+				</tr>
+			</tbody>
+		</table>
 			<? } ?>
 	</div>
 
 	<div class="well">
+	<h4>Matrix - Rotate Right 90</h4>
 		<?
-		$array = create_rand_matrix_array_songuyento();
-		for($i=0; $i< 5; $i++){ ?>
+		$array = rotate_right();
+		for($i=0; $i < 10; $i++){ ?>
 		<table class="table table-hover">
 			<tbody>
 				<tr>
-					<? for ($j=0; $j < 5; $j++) {
-						?>
-						<td style="width:60px">
-							<? 	if(testsonguyento_2($array[$j][$i])) {
-								echo('<b style="color:red">' .$array[$j][$i]. '</b>');
+			<? for ($j=0; $j < 10; $j++) {
+				?>
+					<td style="width:60px">
+						<? 	if(testsonguyento_2($array[$i][$j])) {
+								echo('<b style="color:red">' .$array[$i][$j]. '</b>');
 							}else{
-								echo($array[$j][$i]);
+								echo($array[$i][$j]);
 							}
-							?>
-						</td>
-						<? } ?>
-					</tr>
-				</tbody>
-			</table>
+						?>
+					</td>
+				<? } ?>
+				</tr>
+			</tbody>
+		</table>
 			<? } ?>
 	</div>
 

@@ -419,36 +419,6 @@
 		}
 	}
 
-	/*function rotate_matrix(){
-		for (k = 0; k < m; k++)
-			for (j=0; j<n; j++) a[k][j] = k*m + j+1;
-
-				printf("\nMa tran ban dau:\n");
-		for (k = 0; k < m; k++)     // m hang, n cot
-		{
-			for (j=0; j<n; j++) printf("%4d",a[k][j]);
-				printf("\n");
-		}
-
-		// (Moi) [k][j] <-- [m-1-j][k] (Cu)
-		printf("\nXoay 90 do cung chieu kim dong ho:\n");
-
-		for (k = 0; k < n; k++)     // n hang, m cot
-		{
-			for (j=0; j<m; j++) printf("%4d",a[m-1-j][k]);
-				printf("\n");
-		}
-
-		// (Moi) [k][j] <-- [j][n-1-k] (Cu)
-		printf("\nXoay 90 do nguoc chieu kim dong ho:\n");
-
-		for (k = 0; k < n; k++)     // n hang, m cot
-		{
-			for (j=0; j<m; j++) printf("%4d",a[j][n-1- k]);
-				printf("\n");
-		}
-	}*/
-
 	function testsonguyento_2($no){
 		if($no == 2){
 			$no++;
@@ -463,6 +433,38 @@
 		}
 		$no++;
 		return true;
+	}
+
+	function create_matrix(){ // 1 - 100
+		$count = 0; $count++;
+		for($i=0; $i < 10; $i++){
+			for ($j=0; $j < 10; $j++) {
+				//$array[$i][$j] = ($i * 10) + ($j + 1);
+				$array[$i][$j] = $count;
+				$count++;
+			}
+		}
+		return ($array);
+	}
+
+	function rotate_left(){
+		$array = create_matrix();
+		for ($i=0; $i < 10; $i++) {
+			for ($j=0; $j < 10; $j++) {
+				$array_rotate[$i][$j] = $array[$j][10 - 1 - $i]; //hang
+			}
+		}
+		return $array_rotate;
+	}
+
+	function rotate_right(){
+		$array = create_matrix();
+		for ($i=0; $i < 10; $i++) {
+			for ($j=0; $j < 10; $j++) {
+				$array_rotate[$i][$j] = $array[10 -1 - $j][$i]; //cot
+			}
+		}
+		return $array_rotate;
 	}
 ?>
 
