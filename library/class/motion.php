@@ -36,8 +36,10 @@ class Map_matrix extends Matrix
 				}
 				echo "<div class='ele_n'>".$ele_show."</div> ";
 			}
-			echo "<div class='clearfix'></div>";			
+			echo "<div class='clearfix'></div>";
 		}
+		echo "<h3>x: ".$this->element1->x."</h3>";
+		echo "<h3>y: ".$this->element1->y."</h3>";
 	}
 }
 
@@ -66,7 +68,7 @@ class Elements{
 			break;
 			case "moveleft":
 				$this->x=$this->x-1;
-				$this->y=$this->y;	
+				$this->y=$this->y;
 			break;
 		}	
 	}
