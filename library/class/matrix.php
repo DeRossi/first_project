@@ -119,8 +119,9 @@ class Matrix implements i_matrix
 				}
 				echo "<div style='background:".$color."' class='ele_n'>".$this->content[$i][$j]."</div> ";
 			}
-			echo "<div class='clearfix'></div>";
+			echo "<div class='clearfix'></div>";			
 		}
+		print_r($_SESSION);
 	}
 
 }
