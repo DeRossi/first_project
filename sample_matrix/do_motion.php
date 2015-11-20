@@ -21,16 +21,17 @@
         $_SESSION["count"]=0;
     }
     $_SESSION["count"]++;
-    $matrix_1 = new Motion(10);
+    $my_map = new Map_matrix(10);
     if(!isset($_SESSION["count"])){
-        $matrix_1->create_matrix();
+        $my_map->create_matrix();
     }else{
-        $matrix_1->open();
+        $my_map->open();
+        $my_map->element1->open();
     }
-
-    $matrix_1->move($_POST["action"]);
-    $matrix_1->show_motion();
-    $matrix_1->save();
+    $my_map->element1->move($_POST["action"]);
+    $my_map->show_motion();
+    $my_map->element1->save();
+    $my_map->save();
     
 
 ?>
