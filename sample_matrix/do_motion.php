@@ -29,8 +29,8 @@
         $my_map->element1->open();
     }
     $my_map->element1->move($_POST["action"]);
-    $my_map->show_motion();
     $my_map->element1->save();
+    $my_map->show_motion();
     $my_map->save();
     
 
