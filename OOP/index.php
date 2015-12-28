@@ -10,15 +10,8 @@
 	?>
 
 	<? 
-	//$hocsinh->typeInfo();
-	//$hocsinh->get_studentID("Messi");
-	
-	//$hocsinh->get_studentID("HP");
-	/*echo "<pre>";
-	print_r($hocsinh->showInfo());
-	echo "</pre>";*/
-
-	$hocsinh = new Students('Hạnh Phúc', 24, '100/25 Đất Thánh', '01692253388', '1m66', '55 kg');
-	$hocsinh->Xuat();
+	$hocsinh = new Students();
+	$hocsinh->setStudent('Hạnh Phúc', 24, '100/25 Đất Thánh', '01692253388', '1m66', '55 kg');
+	$hocsinh->getStudent();
 	?>
 </div>
